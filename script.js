@@ -29,14 +29,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar Background on Scroll
+// Navbar Background on Scroll - MotherDuck theme
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
+        navbar.style.background = '#FFFFFF';
+        navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
     } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+        navbar.style.background = '#FFFFFF';
         navbar.style.boxShadow = 'none';
     }
 });
