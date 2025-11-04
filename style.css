@@ -685,20 +685,20 @@ section {
 
 .contact-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
     color: var(--text-dark);
     text-decoration: none;
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
     background: var(--bg-white);
     border: var(--border-width) solid var(--border-color);
     box-shadow: -5px 5px 0px var(--border-color);
     transition: all 0.2s ease;
     font-weight: 600;
-    word-break: break-word;
-    overflow-wrap: break-word;
     text-align: center;
+    min-height: 120px;
 }
 
 .contact-item:hover {
@@ -709,13 +709,14 @@ section {
 }
 
 .contact-item i {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     flex-shrink: 0;
 }
 
 .contact-item span {
-    overflow: hidden;
-    text-overflow: ellipsis;
+    word-break: break-word;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 /* Footer */
