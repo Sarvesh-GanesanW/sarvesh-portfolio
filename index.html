@@ -22,6 +22,9 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -39,19 +42,30 @@
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-primary">Get In Touch</a>
                 <a href="#projects" class="btn btn-secondary">View Projects</a>
+                <a href="Sarvesh_Resume.pdf" download="Sarvesh_Ganesan_Resume.pdf" class="btn btn-resume">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://github.com/Sarvesh-GanesanW" target="_blank" class="social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/sarvesh-ganesan09" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </div>
             <div class="hero-stats">
                 <div class="stat">
-                    <h3>2+</h3>
-                    <p>Years Experience</p>
+                    <h3>AI/ML</h3>
+                    <p>Engineering</p>
                 </div>
                 <div class="stat">
-                    <h3>40%</h3>
-                    <p>Efficiency Improved</p>
+                    <h3>Data</h3>
+                    <p>Engineering</p>
                 </div>
                 <div class="stat">
-                    <h3>9.08</h3>
-                    <p>GPA</p>
+                    <h3>Cloud</h3>
+                    <p>Infrastructure</p>
                 </div>
             </div>
         </div>
@@ -199,18 +213,25 @@
                         <span>Data Analytics</span>
                         <span>RAG</span>
                     </div>
+                    <a href="https://github.com/Sarvesh-GanesanW/AgentSynapse" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
                 </div>
                 <div class="project-card">
                     <div class="project-icon">
-                        <i class="fas fa-tasks"></i>
+                        <i class="fas fa-cloud"></i>
                     </div>
-                    <h3>TaskTracker</h3>
-                    <p>Implemented a simple task tracker, tracking tasks while generating motivational quotes using LLMs to boost productivity and keep users motivated.</p>
+                    <h3>CloudeasyML</h3>
+                    <p>Multi-modal ML system for real-time housing market crisis prediction and policy recommendation using XGBoost, CatBoost, TimesFM, and STGNN. Deployed on Kubernetes with GPU support for scalable, enterprise-grade forecasting.</p>
                     <div class="project-tech">
-                        <span>Python</span>
-                        <span>LLMs</span>
-                        <span>Productivity</span>
+                        <span>ML Models</span>
+                        <span>Kubernetes</span>
+                        <span>FastAPI</span>
+                        <span>Docker</span>
                     </div>
+                    <a href="https://github.com/Sarvesh-GanesanW/CloudeasyML" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
                 </div>
                 <div class="project-card">
                     <div class="project-icon">
@@ -224,6 +245,9 @@
                         <span>Vector DB</span>
                         <span>Research</span>
                     </div>
+                    <a href="https://github.com/Sarvesh-GanesanW" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
                 </div>
             </div>
         </div>
@@ -233,25 +257,51 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-content">
-                <p class="contact-description">Ready to build the next generation of AI solutions together?</p>
-                <div class="contact-info">
-                    <a href="mailto:sarveshganesan2002@gmail.com" class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>sarveshganesan2002@gmail.com</span>
-                    </a>
-                    <a href="tel:+918668063705" class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+91 8668063705</span>
-                    </a>
-                    <a href="https://linkedin.com/in/sarvesh-ganesan09" target="_blank" class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/Sarvesh-GanesanW" target="_blank" class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
+            <div class="contact-wrapper">
+                <div class="contact-info-section">
+                    <p class="contact-description">Ready to build the next generation of AI solutions together?</p>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:sarveshganesan2002@gmail.com">sarveshganesan2002@gmail.com</a>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+918668063705">+91 8668063705</a>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://linkedin.com/in/sarvesh-ganesan09" target="_blank">LinkedIn Profile</a>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/Sarvesh-GanesanW" target="_blank">GitHub Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-section">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="How can I help?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                    <div id="form-status" class="form-status"></div>
                 </div>
             </div>
         </div>
@@ -259,7 +309,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Sarvesh Ganesan. Built with passion for AI.</p>
+        <p>Sarvesh Ganesan. Built with passion for AI.</p>
     </footer>
 
     <script src="script.js"></script>
