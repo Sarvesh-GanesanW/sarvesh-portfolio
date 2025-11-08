@@ -229,3 +229,312 @@ if (contactForm) {
         }, 3000);
     });
 }
+
+// GitHub Activity Dashboard
+const GITHUB_USERNAME = 'Sarvesh-GanesanW';
+const GITHUB_API_BASE = 'https://api.github.com';
+const CACHE_DURATION = 10 * 60 * 1000; // 10 minutes cache
+
+// Simple cache implementation
+const cache = {
+    data: {},
+    set(key, value) {
+        this.data[key] = {
+            value,
+            timestamp: Date.now()
+        };
+    },
+    get(key) {
+        const item = this.data[key];
+        if (!item) return null;
+        if (Date.now() - item.timestamp > CACHE_DURATION) {
+            delete this.data[key];
+            return null;
+        }
+        return item.value;
+    }
+};
+
+// Utility function to format date
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffMs = now - date;
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) return 'Today';
+    if (diffDays === 1) return 'Yesterday';
+    if (diffDays < 7) return `${diffDays} days ago`;
+    if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+    if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+    return `${Math.floor(diffDays / 365)} years ago`;
+}
+
+// Fetch GitHub user data with caching
+async function fetchGitHubUser() {
+    const cacheKey = 'github_user';
+    const cached = cache.get(cacheKey);
+    if (cached) return cached;
+
+    try {
+        const response = await fetch(`${GITHUB_API_BASE}/users/${GITHUB_USERNAME}`);
+        if (!response.ok) throw new Error('Failed to fetch user data');
+        const data = await response.json();
+        cache.set(cacheKey, data);
+        return data;
+    } catch (error) {
+        console.error('Error fetching GitHub user:', error);
+        return null;
+    }
+}
+
+// Fetch GitHub repositories with caching
+async function fetchGitHubRepos() {
+    const cacheKey = 'github_repos';
+    const cached = cache.get(cacheKey);
+    if (cached) return cached;
+
+    try {
+        const response = await fetch(`${GITHUB_API_BASE}/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`);
+        if (!response.ok) throw new Error('Failed to fetch repositories');
+        const data = await response.json();
+        cache.set(cacheKey, data);
+        return data;
+    } catch (error) {
+        console.error('Error fetching GitHub repos:', error);
+        return [];
+    }
+}
+
+// Fetch GitHub events (activity) with caching
+async function fetchGitHubEvents() {
+    const cacheKey = 'github_events';
+    const cached = cache.get(cacheKey);
+    if (cached) return cached;
+
+    try {
+        const response = await fetch(`${GITHUB_API_BASE}/users/${GITHUB_USERNAME}/events?per_page=30`);
+        if (!response.ok) throw new Error('Failed to fetch events');
+        const data = await response.json();
+        cache.set(cacheKey, data);
+        return data;
+    } catch (error) {
+        console.error('Error fetching GitHub events:', error);
+        return [];
+    }
+}
+
+// Calculate commit streak
+function calculateCommitStreak(events) {
+    const pushEvents = events.filter(event => event.type === 'PushEvent');
+    if (pushEvents.length === 0) return 0;
+
+    const commitDates = new Set();
+    pushEvents.forEach(event => {
+        const date = new Date(event.created_at).toDateString();
+        commitDates.add(date);
+    });
+
+    const sortedDates = Array.from(commitDates).map(d => new Date(d)).sort((a, b) => b - a);
+
+    let streak = 0;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    for (let i = 0; i < sortedDates.length; i++) {
+        const checkDate = new Date(today);
+        checkDate.setDate(checkDate.getDate() - i);
+        checkDate.setHours(0, 0, 0, 0);
+
+        const eventDate = new Date(sortedDates[i]);
+        eventDate.setHours(0, 0, 0, 0);
+
+        if (eventDate.getTime() === checkDate.getTime()) {
+            streak++;
+        } else {
+            break;
+        }
+    }
+
+    return streak;
+}
+
+// Get activity icon based on event type
+function getActivityIcon(eventType) {
+    const icons = {
+        'PushEvent': 'fa-code-commit',
+        'CreateEvent': 'fa-plus-circle',
+        'DeleteEvent': 'fa-trash',
+        'ForkEvent': 'fa-code-branch',
+        'IssuesEvent': 'fa-exclamation-circle',
+        'IssueCommentEvent': 'fa-comment',
+        'PullRequestEvent': 'fa-code-pull-request',
+        'WatchEvent': 'fa-star',
+        'ReleaseEvent': 'fa-tag',
+        'PublicEvent': 'fa-lock-open'
+    };
+    return icons[eventType] || 'fa-circle';
+}
+
+// Get activity description
+function getActivityDescription(event) {
+    const repo = event.repo.name;
+
+    switch (event.type) {
+        case 'PushEvent':
+            const commitCount = event.payload.commits?.length || 0;
+            return `Pushed ${commitCount} commit${commitCount !== 1 ? 's' : ''} to ${repo}`;
+        case 'CreateEvent':
+            return `Created ${event.payload.ref_type} in ${repo}`;
+        case 'DeleteEvent':
+            return `Deleted ${event.payload.ref_type} in ${repo}`;
+        case 'ForkEvent':
+            return `Forked ${repo}`;
+        case 'IssuesEvent':
+            return `${event.payload.action} an issue in ${repo}`;
+        case 'IssueCommentEvent':
+            return `Commented on an issue in ${repo}`;
+        case 'PullRequestEvent':
+            return `${event.payload.action} a pull request in ${repo}`;
+        case 'WatchEvent':
+            return `Starred ${repo}`;
+        case 'ReleaseEvent':
+            return `Published a release in ${repo}`;
+        case 'PublicEvent':
+            return `Made ${repo} public`;
+        default:
+            return `Activity in ${repo}`;
+    }
+}
+
+// Render GitHub stats
+function renderGitHubStats(userData, repos, events) {
+    // Total repositories
+    document.getElementById('total-repos').textContent = userData.public_repos || 0;
+
+    // Total stars
+    const totalStars = repos.reduce((sum, repo) => sum + (repo.stargazers_count || 0), 0);
+    document.getElementById('total-stars').textContent = totalStars;
+
+    // Recent commits (last 30 days)
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+    const recentCommits = events.filter(event =>
+        event.type === 'PushEvent' && new Date(event.created_at) > thirtyDaysAgo
+    ).reduce((sum, event) => sum + (event.payload.commits?.length || 0), 0);
+    document.getElementById('recent-commits').textContent = recentCommits;
+
+    // Commit streak
+    const streak = calculateCommitStreak(events);
+    document.getElementById('commit-streak').textContent = streak;
+}
+
+// Render recent activity
+function renderGitHubActivity(events) {
+    const activityList = document.getElementById('github-activity-list');
+
+    // Filter to show only the most relevant events
+    const relevantEvents = events.filter(event =>
+        ['PushEvent', 'CreateEvent', 'PullRequestEvent', 'IssuesEvent', 'ForkEvent'].includes(event.type)
+    ).slice(0, 8);
+
+    if (relevantEvents.length === 0) {
+        activityList.innerHTML = '<p style="text-align: center; color: var(--text-dark);">No recent activity</p>';
+        return;
+    }
+
+    activityList.innerHTML = relevantEvents.map(event => `
+        <div class="activity-item">
+            <div class="activity-icon">
+                <i class="fas ${getActivityIcon(event.type)}"></i>
+            </div>
+            <div class="activity-content">
+                <h4>${event.repo.name}</h4>
+                <p>${getActivityDescription(event)}</p>
+                <div class="activity-meta">${formatDate(event.created_at)}</div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Render top repositories
+function renderTopRepos(repos) {
+    const reposList = document.getElementById('github-repos-list');
+
+    // Sort by stars and filter out forks, take top 5
+    const topRepos = repos
+        .filter(repo => !repo.fork)
+        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+        .slice(0, 5);
+
+    if (topRepos.length === 0) {
+        reposList.innerHTML = '<p style="text-align: center; color: var(--text-dark);">No repositories found</p>';
+        return;
+    }
+
+    reposList.innerHTML = topRepos.map(repo => `
+        <div class="repo-item">
+            <div class="repo-header">
+                <i class="fas fa-folder"></i>
+                <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a>
+            </div>
+            ${repo.description ? `<p class="repo-description">${repo.description}</p>` : ''}
+            <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                ${repo.language ? `<span class="repo-language">${repo.language}</span>` : ''}
+                <div class="repo-stats">
+                    <span><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
+                    <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Initialize GitHub Dashboard
+async function initGitHubDashboard() {
+    try {
+        const [userData, repos, events] = await Promise.all([
+            fetchGitHubUser(),
+            fetchGitHubRepos(),
+            fetchGitHubEvents()
+        ]);
+
+        if (userData && repos && events) {
+            renderGitHubStats(userData, repos, events);
+            renderGitHubActivity(events);
+            renderTopRepos(repos);
+        } else {
+            // Show error state
+            document.getElementById('github-activity-list').innerHTML =
+                '<p style="text-align: center; color: var(--accent-coral);">Failed to load GitHub data</p>';
+            document.getElementById('github-repos-list').innerHTML =
+                '<p style="text-align: center; color: var(--accent-coral);">Failed to load repositories</p>';
+        }
+    } catch (error) {
+        console.error('Error initializing GitHub dashboard:', error);
+        document.getElementById('github-activity-list').innerHTML =
+            '<p style="text-align: center; color: var(--accent-coral);">Failed to load GitHub data</p>';
+        document.getElementById('github-repos-list').innerHTML =
+            '<p style="text-align: center; color: var(--accent-coral);">Failed to load repositories</p>';
+    }
+}
+
+// Lazy load GitHub dashboard when section is visible
+if (document.getElementById('github-activity-list')) {
+    let githubInitialized = false;
+
+    const githubObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !githubInitialized) {
+                githubInitialized = true;
+                initGitHubDashboard();
+                githubObserver.disconnect();
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const githubSection = document.getElementById('github');
+    if (githubSection) {
+        githubObserver.observe(githubSection);
+    }
+}

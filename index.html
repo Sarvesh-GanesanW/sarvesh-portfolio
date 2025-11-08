@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sarvesh Ganesan - AI Research Engineer specializing in Generative AI, LangChain, RAG systems, and cloud infrastructure.">
     <title>Sarvesh Ganesan - AI Research Engineer</title>
+
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://api.github.com">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,6 +29,7 @@
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#github" class="nav-link">GitHub</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
@@ -294,6 +304,64 @@
                 <div class="tech-item">
                     <i class="fas fa-code-branch"></i>
                     <span>Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Activity Section -->
+    <section id="github" class="github-activity">
+        <div class="container">
+            <h2 class="section-title">GitHub Activity</h2>
+
+            <!-- GitHub Stats Overview -->
+            <div class="github-stats-overview">
+                <div class="github-stat-card">
+                    <i class="fas fa-code-branch"></i>
+                    <h3 id="total-repos">--</h3>
+                    <p>Repositories</p>
+                </div>
+                <div class="github-stat-card">
+                    <i class="fas fa-star"></i>
+                    <h3 id="total-stars">--</h3>
+                    <p>Total Stars</p>
+                </div>
+                <div class="github-stat-card">
+                    <i class="fas fa-code-commit"></i>
+                    <h3 id="recent-commits">--</h3>
+                    <p>Recent Commits</p>
+                </div>
+                <div class="github-stat-card">
+                    <i class="fas fa-fire"></i>
+                    <h3 id="commit-streak">--</h3>
+                    <p>Day Streak</p>
+                </div>
+            </div>
+
+            <!-- GitHub Content Grid -->
+            <div class="github-content-grid">
+                <!-- Recent Activity -->
+                <div class="github-section">
+                    <h3 class="github-section-title">
+                        <i class="fas fa-history"></i> Recent Activity
+                    </h3>
+                    <div id="github-activity-list" class="activity-list">
+                        <div class="activity-loading">
+                            <i class="fas fa-spinner fa-spin"></i> Loading activity...
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Repositories -->
+                <div class="github-section">
+                    <h3 class="github-section-title">
+                        <i class="fas fa-folder"></i> Top Repositories
+                    </h3>
+                    <div id="github-repos-list" class="repos-list">
+                        <div class="repos-loading">
+                            <i class="fas fa-spinner fa-spin"></i> Loading repositories...
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
