@@ -1,0 +1,23 @@
+{
+  "name": "sarvesh-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal portfolio site for Sarvesh Ganesan",
+  "homepage": "https://sarveshganesan.in",
+  "scripts": {
+    "lint:html": "htmlhint index.html 404.html",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:js": "eslint script.js",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
+    "serve": "npx http-server -c-1 -p 8080"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "htmlhint": "^1.1.4",
+    "prettier": "^3.2.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}

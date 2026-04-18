@@ -3,26 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sarvesh Ganesan - Lead AI Architect specializing in multi-agent systems, RAG pipelines, and cloud-native data platforms on AWS.">
-    <title>Sarvesh Ganesan - Lead AI Architect</title>
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F4EFEA" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
 
-    <!-- Preconnect to external domains for faster loading -->
+    <title>Sarvesh Ganesan — Lead AI Architect</title>
+    <meta name="description" content="Sarvesh Ganesan — Lead AI Architect specializing in multi-agent systems, RAG pipelines, and cloud-native data platforms on AWS.">
+    <meta name="author" content="Sarvesh Ganesan">
+    <link rel="canonical" href="https://sarvesh-ganesanw.github.io/sarvesh-portfolio/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sarvesh-ganesanw.github.io/sarvesh-portfolio/">
+    <meta property="og:title" content="Sarvesh Ganesan — Lead AI Architect">
+    <meta property="og:description" content="Architecting enterprise AI platforms: multi-agent systems, RAG, and cloud-native data platforms on AWS.">
+    <meta property="og:image" content="https://sarvesh-ganesanw.github.io/sarvesh-portfolio/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Sarvesh Ganesan">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sarvesh Ganesan — Lead AI Architect">
+    <meta name="twitter:description" content="Architecting enterprise AI platforms: multi-agent systems, RAG, and cloud-native data platforms on AWS.">
+    <meta name="twitter:image" content="https://sarvesh-ganesanw.github.io/sarvesh-portfolio/og-image.png">
+
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://api.github.com">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"></noscript>
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sarvesh Ganesan",
+        "url": "https://sarvesh-ganesanw.github.io/sarvesh-portfolio/",
+        "jobTitle": "Lead AI Architect",
+        "description": "Lead AI Architect specializing in multi-agent systems, RAG pipelines, and cloud-native data platforms on AWS.",
+        "sameAs": [
+            "https://github.com/Sarvesh-GanesanW",
+            "https://linkedin.com/in/sarvesh-ganesan09"
+        ],
+        "knowsAbout": [
+            "Multi-Agent AI Systems",
+            "Retrieval-Augmented Generation",
+            "AWS Bedrock",
+            "Apache Iceberg",
+            "Apache Spark",
+            "Kubernetes",
+            "MLOps"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Groundzero Software Private Limited"
+        }
+    }
+    </script>
 </head>
 <body>
-    
+
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">SG</a>
+            <a href="#home" class="nav-logo" aria-label="Sarvesh Ganesan home">SG</a>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -32,36 +88,41 @@
                 <li><a href="#github" class="nav-link">GitHub</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+                <i class="fas fa-moon" aria-hidden="true"></i>
             </button>
-            <div class="hamburger">
+            <button class="hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
+    <main id="main">
+
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
-            <div class="glitch" data-text="SARVESH GANESAN">SARVESH GANESAN</div>
-            <h2 class="hero-subtitle typing-effect">Lead AI Architect</h2>
+            <h1 class="glitch" id="hero-title" data-text="SARVESH GANESAN">SARVESH GANESAN</h1>
+            <p class="hero-subtitle typing-effect">Lead AI Architect</p>
             <p class="hero-description">Architecting enterprise AI platforms that turn data into decisions</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-primary">Get In Touch</a>
                 <a href="#projects" class="btn btn-secondary">View Projects</a>
                 <a href="Sarvesh_Resume.pdf" download="Sarvesh_Ganesan_Resume.pdf" class="btn btn-resume">
-                    <i class="fas fa-download"></i> Download Resume
+                    <i class="fas fa-download" aria-hidden="true"></i> Download Resume
                 </a>
             </div>
             <div class="hero-socials">
-                <a href="https://github.com/Sarvesh-GanesanW" target="_blank" class="social-link" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
+                <a href="https://github.com/Sarvesh-GanesanW" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
+                    <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
-                <a href="https://linkedin.com/in/sarvesh-ganesan09" target="_blank" class="social-link" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
+                <a href="https://linkedin.com/in/sarvesh-ganesan09" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/Sarvesh-GanesanW/sarvesh-blog" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Blog">
+                    <i class="fas fa-pen-nib" aria-hidden="true"></i>
                 </a>
             </div>
             <div class="hero-stats">
@@ -82,28 +143,28 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about" aria-labelledby="about-title">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" id="about-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="lead">Lead AI Architect with 2.5+ years of experience building and shipping a cloud-native enterprise data platform from the ground up.</p>
-                    <p>Led architecture of 12+ production microservices spanning agentic AI, distributed ETL, data lakehousing, and MLOps on AWS EKS. Built a multi-agent AI system with 69+ data connectors that replaced hours of manual analytics with seconds of natural-language conversation. Reduced RAG latency by 90% and delivered sub-10s queries on 100M+ row datasets through hybrid retrieval, neural reranking, and Spark/Iceberg optimization.</p>
-                    <p>Passionate about turning ambiguous product requirements into scalable, cost-optimized systems that serve real enterprise workloads.</p>
+                    <p class="lead">Lead AI Architect with 2.5+ years building and shipping a cloud-native enterprise data platform end-to-end — from the agentic chat layer down to the Iceberg lakehouse and Kubernetes runtime images.</p>
+                    <p>Solely architected 12+ production microservices on AWS EKS spanning agentic AI, distributed ETL, data lakehousing, MLOps, and containerized ML runtimes. Built a multi-agent orchestration system with 50+ dynamically-loaded data connectors that collapses hours of manual analytics into seconds of natural-language conversation. Delivered sub-second hybrid RAG at production scale and sub-10s queries over 100M+ row datasets via Spark / Iceberg / DuckDB.</p>
+                    <p>Independently shipped a full-stack CRM platform for an enterprise tea distribution business — storefront, admin dashboard, invoicing, logistics KPIs, and a Claude-powered MCP server exposing 46 administrative tools across 9 business domains.</p>
                 </div>
                 <div class="about-highlights">
                     <div class="highlight-card">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-brain" aria-hidden="true"></i>
                         <h3>Multi-Agent AI</h3>
                         <p>8 specialized agents orchestrated by Claude, 60+ tools, hybrid RAG with neural reranking, and cost-optimized model routing</p>
                     </div>
                     <div class="highlight-card">
-                        <i class="fas fa-cloud"></i>
+                        <i class="fas fa-cloud" aria-hidden="true"></i>
                         <h3>Cloud & Infrastructure</h3>
                         <p>12+ microservices on AWS EKS with Karpenter auto-scaling, 99.9% uptime, and multi-tenant isolation</p>
                     </div>
                     <div class="highlight-card">
-                        <i class="fas fa-database"></i>
+                        <i class="fas fa-database" aria-hidden="true"></i>
                         <h3>Data & MLOps</h3>
                         <p>TB-scale Iceberg lakehouse, 69+ data connectors, Spark/DuckDB runtimes, MLflow, and GPU training pipelines</p>
                     </div>
@@ -113,9 +174,9 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience">
+    <section id="experience" class="experience" aria-labelledby="experience-title">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title" id="experience-title">Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">09/2023 - 03/2026</div>
@@ -123,15 +184,16 @@
                         <h3>Lead AI Architect</h3>
                         <h4>Groundzero Software Private Limited · Chennai</h4>
                         <ul>
-                            <li>Led architecture of 12+ production microservices end-to-end — agentic chat, data provider, ETL orchestrator, Iceberg lakehouse, MLOps APIs, and Spark/DuckDB runtimes</li>
-                            <li>Built a multi-agent AI system that lets enterprise users query databases, build dashboards, run ETL jobs, and manage notebooks through natural language — replacing hours of manual work with seconds of conversation</li>
-                            <li>Scaled data connectivity to 69+ sources (Snowflake, BigQuery, Redshift, MongoDB, Kafka, S3, Salesforce) through a dynamically-loaded connector architecture</li>
-                            <li>Reduced RAG query latency by 90% (10s to under 1s) with hybrid vector search, full-text search, and neural reranking at production scale</li>
-                            <li>Delivered sub-10s query performance on 100M+ row datasets via a TB-scale Iceberg lakehouse with Spark and DuckDB compute engines</li>
-                            <li>Cut LLM inference costs through three-tier model routing (Opus/Sonnet/Haiku) with prompt caching and per-request token tracking</li>
-                            <li>Designed ETL orchestration handling job submission, multi-job chaining, and real-time log streaming across three pluggable compute engines on dynamically provisioned EKS pods</li>
-                            <li>Stood up MLOps infrastructure — MLflow with custom JWT auth, Jupyter lifecycle management on EKS, model versioning, and GPU training containers for PyTorch, TensorFlow, and scikit-learn</li>
-                            <li>Engineered high-availability infrastructure with Karpenter-based just-in-time node provisioning on EKS, achieving 99.9% uptime across multi-tenant deployments</li>
+                            <li>Solely architected and shipped 12+ production microservices end-to-end on AWS EKS — agentic chat platform, data provider API, ETL orchestrator, Iceberg REST catalog, MLOps control plane, and Spark/DuckDB/PyTorch/TensorFlow/scikit-learn runtime images</li>
+                            <li>Built a Claude-orchestrated multi-agent chat system with intent-aware agent routing, per-tenant tool selection, and SSE-based streaming — enabling enterprise users to query databases, build dashboards, submit ETL jobs, and manage notebooks entirely through natural language</li>
+                            <li>Engineered a dynamically-loaded connector architecture scaling data access to 50+ sources (Snowflake, BigQuery, Redshift, Postgres, MongoDB, Kafka, S3, Salesforce, MySQL, Oracle) with role-based authorization and schema introspection caching</li>
+                            <li>Reduced RAG query latency by 90% (10s → sub-1s) using hybrid vector + full-text search with Cohere neural reranking, running over pgvector on production traffic</li>
+                            <li>Delivered sub-10s analytic queries on 100M+ row datasets by architecting a TB-scale Apache Iceberg lakehouse backed by a gRPC-based REST catalog with schema evolution, time-travel, and multi-warehouse federation</li>
+                            <li>Cut LLM inference costs via three-tier model routing (Opus/Sonnet/Haiku) with Anthropic prompt caching, per-request token tracking, and automatic downgrade for deterministic tool calls</li>
+                            <li>Designed the ETL orchestration layer handling job submission, multi-job chaining, container log streaming from EKS pods, and dataset lineage — across three pluggable compute engines on Karpenter-provisioned spot nodes</li>
+                            <li>Stood up the MLOps control plane from scratch — MLflow with custom JWT auth, Jupyter lifecycle management on EKS, fine-tune job dispatch across 7+ LLM providers, and GPU training containers for PyTorch, TensorFlow, and scikit-learn</li>
+                            <li>Achieved 99.9% uptime across multi-tenant deployments via Karpenter just-in-time node provisioning, graceful pod lifecycle handling, and tenant-scoped compute isolation</li>
+                            <li>Authored an end-to-end pytest suite covering dashboard rendering, visualization generation, and agentic chat flows with browser automation and screenshot-based regression validation</li>
                         </ul>
                     </div>
                 </div>
@@ -152,224 +214,210 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills" aria-labelledby="skills-title">
         <div class="container">
-            <h2 class="section-title">Technical Arsenal</h2>
+            <h2 class="section-title" id="skills-title">Technical Arsenal</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3><i class="fas fa-robot"></i> AI & LLM</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS Bedrock</span>
-                        <span class="skill-tag">Strands Agents</span>
-                        <span class="skill-tag">LangChain</span>
-                        <span class="skill-tag">RAG Systems</span>
-                        <span class="skill-tag">Cohere Embed & Rerank</span>
-                        <span class="skill-tag">Prompt Caching</span>
-                        <span class="skill-tag">Multi-Agent Orchestration</span>
-                    </div>
+                    <h3><i class="fas fa-robot" aria-hidden="true"></i> AI &amp; LLM</h3>
+                    <ul class="skill-tags">
+                        <li class="skill-tag">AWS Bedrock</li>
+                        <li class="skill-tag">Strands Agents</li>
+                        <li class="skill-tag">LangChain</li>
+                        <li class="skill-tag">RAG Systems</li>
+                        <li class="skill-tag">Cohere Embed &amp; Rerank</li>
+                        <li class="skill-tag">Prompt Caching</li>
+                        <li class="skill-tag">Multi-Agent Orchestration</li>
+                    </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS EKS</span>
-                        <span class="skill-tag">S3</span>
-                        <span class="skill-tag">EC2</span>
-                        <span class="skill-tag">ECR</span>
-                        <span class="skill-tag">Lambda</span>
-                        <span class="skill-tag">CloudWatch</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">Karpenter</span>
-                    </div>
+                    <h3><i class="fas fa-cloud" aria-hidden="true"></i> Cloud &amp; Infrastructure</h3>
+                    <ul class="skill-tags">
+                        <li class="skill-tag">AWS EKS</li>
+                        <li class="skill-tag">S3</li>
+                        <li class="skill-tag">EC2</li>
+                        <li class="skill-tag">ECR</li>
+                        <li class="skill-tag">Lambda</li>
+                        <li class="skill-tag">CloudWatch</li>
+                        <li class="skill-tag">Docker</li>
+                        <li class="skill-tag">Kubernetes</li>
+                        <li class="skill-tag">Karpenter</li>
+                    </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Data Engineering</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Apache Spark</span>
-                        <span class="skill-tag">Apache Iceberg</span>
-                        <span class="skill-tag">DuckDB</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">pgvector</span>
-                        <span class="skill-tag">Redis</span>
-                        <span class="skill-tag">Pinecone</span>
-                        <span class="skill-tag">MongoDB</span>
-                    </div>
+                    <h3><i class="fas fa-database" aria-hidden="true"></i> Data Engineering</h3>
+                    <ul class="skill-tags">
+                        <li class="skill-tag">Apache Spark</li>
+                        <li class="skill-tag">Apache Iceberg</li>
+                        <li class="skill-tag">DuckDB</li>
+                        <li class="skill-tag">PostgreSQL</li>
+                        <li class="skill-tag">pgvector</li>
+                        <li class="skill-tag">Redis</li>
+                        <li class="skill-tag">Pinecone</li>
+                        <li class="skill-tag">MongoDB</li>
+                    </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Development & MLOps</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">gRPC</span>
-                        <span class="skill-tag">SSE Streaming</span>
-                        <span class="skill-tag">MLflow</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                    </div>
+                    <h3><i class="fas fa-code" aria-hidden="true"></i> Development &amp; MLOps</h3>
+                    <ul class="skill-tags">
+                        <li class="skill-tag">Python</li>
+                        <li class="skill-tag">FastAPI</li>
+                        <li class="skill-tag">Flask</li>
+                        <li class="skill-tag">REST APIs</li>
+                        <li class="skill-tag">gRPC</li>
+                        <li class="skill-tag">SSE Streaming</li>
+                        <li class="skill-tag">MLflow</li>
+                        <li class="skill-tag">PyTorch</li>
+                        <li class="skill-tag">TensorFlow</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects" aria-labelledby="projects-title">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title" id="projects-title">Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <article class="project-card">
                     <div class="project-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-store" aria-hidden="true"></i>
                     </div>
-                    <h3>AgentSynapse</h3>
-                    <p>Enterprise AI agent platform with 8 specialized agents and 60+ tools enabling natural-language data analytics — query databases, build dashboards, run ETL, and manage notebooks through conversation. Features hybrid RAG with neural reranking and 69+ data connectors.</p>
-                    <div class="project-tech">
-                        <span>Multi-Agent AI</span>
-                        <span>AWS Bedrock</span>
-                        <span>RAG</span>
-                        <span>FastAPI</span>
-                    </div>
-                    <a href="https://github.com/Sarvesh-GanesanW/AgentSynapse" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View on GitHub
+                    <h3>Sree Rajalakshmi CRM</h3>
+                    <p>End-to-end CRM and operations platform I built solo for a tea distribution business — customer storefront, admin dashboard, GST-compliant invoice generator, Razorpay checkout, WhatsApp order bot, and a Model Context Protocol (MCP) server exposing 46 administrative tools across 9 domains so Claude can run the business conversationally.</p>
+                    <ul class="project-tech">
+                        <li>FastAPI</li>
+                        <li>React</li>
+                        <li>MCP Server</li>
+                        <li>Razorpay</li>
+                        <li>AWS Lambda</li>
+                    </ul>
+                    <a href="https://srerajalakshmi.in" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Visit Sree Rajalakshmi Enterprises storefront">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i> Visit Live Site
                     </a>
-                </div>
-                <div class="project-card">
+                </article>
+                <article class="project-card">
                     <div class="project-icon">
-                        <i class="fas fa-cloud"></i>
+                        <i class="fas fa-plug" aria-hidden="true"></i>
                     </div>
-                    <h3>CloudeasyML</h3>
-                    <p>Multi-modal ML system for real-time housing market crisis prediction and policy recommendation using XGBoost, CatBoost, TimesFM, and STGNN. Deployed on Kubernetes with GPU support for scalable, enterprise-grade forecasting.</p>
-                    <div class="project-tech">
-                        <span>ML Models</span>
-                        <span>Kubernetes</span>
-                        <span>FastAPI</span>
-                        <span>Docker</span>
-                    </div>
-                    <a href="https://github.com/Sarvesh-GanesanW/CloudeasyML" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View on GitHub
+                    <h3>SRE Tea MCP Server</h3>
+                    <p>Production-grade Model Context Protocol server I shipped to let Claude Desktop, Claude Code, and custom MCP clients operate a live e-commerce business. Exposes 46 tools across orders, products, customers, inventory, invoicing, logistics, churn analytics, and warehouse management with automatic token refresh, parallel aggregation, and structured error recovery.</p>
+                    <ul class="project-tech">
+                        <li>MCP</li>
+                        <li>Node.js</li>
+                        <li>Claude</li>
+                        <li>STDIO Transport</li>
+                        <li>JWT</li>
+                    </ul>
+                    <a href="https://github.com/Sarvesh-GanesanW/sre-tea-mcp" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View SRE Tea MCP on GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
                     </a>
-                </div>
-                <div class="project-card">
+                </article>
+                <article class="project-card">
                     <div class="project-icon">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-diagram-project" aria-hidden="true"></i>
                     </div>
-                    <h3>AMSR_RAG</h3>
-                    <p>Novel approach to improve RAG retrieval accuracy by combining Small Language Models (SLM) and Large Language Models with vector databases for enhanced information retrieval and context understanding.</p>
-                    <div class="project-tech">
-                        <span>RAG</span>
-                        <span>LLMs</span>
-                        <span>Vector DB</span>
-                        <span>Research</span>
-                    </div>
-                    <a href="https://github.com/Sarvesh-GanesanW" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View on GitHub
+                    <h3>PlannerAgent</h3>
+                    <p>Conversational planning agent I built on LangGraph that handles 10+ turn dialogues without context loss, asks targeted clarifying questions, and versions plans across sessions. Ships with 12+ templates, interactive Gantt charts, multi-format import (Trello, CSV, Markdown), and a dual-provider LLM backend across Bedrock and Anthropic.</p>
+                    <ul class="project-tech">
+                        <li>LangGraph</li>
+                        <li>Claude</li>
+                        <li>AWS Bedrock</li>
+                        <li>Python</li>
+                        <li>Session State</li>
+                    </ul>
+                    <a href="https://github.com/Sarvesh-GanesanW/PlannerAgent" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View PlannerAgent on GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
                     </a>
-                </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                    </div>
+                    <h3>Data Quality Checker</h3>
+                    <p>GPU-accelerated Python library I authored and published on PyPI (<code>data_pilot_checker</code>) for automated data integrity validation at scale. Runs missing-value, duplicate, outlier, type, and range checks on cuDF when a CUDA GPU is present, with transparent Dask fallback for CPU-only environments.</p>
+                    <ul class="project-tech">
+                        <li>cuDF</li>
+                        <li>Dask</li>
+                        <li>RAPIDS</li>
+                        <li>PyPI</li>
+                        <li>GPU</li>
+                    </ul>
+                    <a href="https://github.com/Sarvesh-GanesanW/dataqualitychecker" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Data Quality Checker on GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+                    </a>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Technologies Section -->
-    <section id="technologies" class="technologies">
+    <section id="technologies" class="technologies" aria-labelledby="tech-title">
         <div class="container">
-            <h2 class="section-title">Tech Stack</h2>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <i class="fab fa-python"></i>
-                    <span>Python</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fab fa-aws"></i>
-                    <span>AWS Bedrock</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fab fa-docker"></i>
-                    <span>Docker</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-database"></i>
-                    <span>PostgreSQL</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-brain"></i>
-                    <span>Strands Agents</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-fire"></i>
-                    <span>Apache Spark</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-cube"></i>
-                    <span>Kubernetes</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-bolt"></i>
-                    <span>FastAPI</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-robot"></i>
-                    <span>MLflow</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-snowflake"></i>
-                    <span>Iceberg</span>
-                </div>
-            </div>
+            <h2 class="section-title" id="tech-title">Tech Stack</h2>
+            <ul class="tech-grid">
+                <li class="tech-item"><i class="fab fa-python" aria-hidden="true"></i><span>Python</span></li>
+                <li class="tech-item"><i class="fab fa-aws" aria-hidden="true"></i><span>AWS Bedrock</span></li>
+                <li class="tech-item"><i class="fab fa-docker" aria-hidden="true"></i><span>Docker</span></li>
+                <li class="tech-item"><i class="fas fa-database" aria-hidden="true"></i><span>PostgreSQL</span></li>
+                <li class="tech-item"><i class="fas fa-brain" aria-hidden="true"></i><span>Strands Agents</span></li>
+                <li class="tech-item"><i class="fas fa-fire" aria-hidden="true"></i><span>Apache Spark</span></li>
+                <li class="tech-item"><i class="fas fa-cube" aria-hidden="true"></i><span>Kubernetes</span></li>
+                <li class="tech-item"><i class="fas fa-bolt" aria-hidden="true"></i><span>FastAPI</span></li>
+                <li class="tech-item"><i class="fas fa-robot" aria-hidden="true"></i><span>MLflow</span></li>
+                <li class="tech-item"><i class="fas fa-snowflake" aria-hidden="true"></i><span>Iceberg</span></li>
+            </ul>
         </div>
     </section>
 
     <!-- GitHub Activity Section -->
-    <section id="github" class="github-activity">
+    <section id="github" class="github-activity" aria-labelledby="github-title">
         <div class="container">
-            <h2 class="section-title">GitHub Activity</h2>
+            <h2 class="section-title" id="github-title">GitHub Activity</h2>
 
-            <!-- GitHub Stats Overview -->
             <div class="github-stats-overview">
                 <div class="github-stat-card">
-                    <i class="fas fa-code-branch"></i>
+                    <i class="fas fa-code-branch" aria-hidden="true"></i>
                     <h3 id="total-repos">--</h3>
                     <p>Repositories</p>
                 </div>
                 <div class="github-stat-card">
-                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
                     <h3 id="total-stars">--</h3>
                     <p>Total Stars</p>
                 </div>
                 <div class="github-stat-card">
-                    <i class="fas fa-code-commit"></i>
+                    <i class="fas fa-code-commit" aria-hidden="true"></i>
                     <h3 id="recent-commits">--</h3>
                     <p>Recent Commits</p>
                 </div>
                 <div class="github-stat-card">
-                    <i class="fas fa-fire"></i>
+                    <i class="fas fa-fire" aria-hidden="true"></i>
                     <h3 id="commit-streak">--</h3>
                     <p>Day Streak</p>
                 </div>
             </div>
 
-            <!-- GitHub Content Grid -->
             <div class="github-content-grid">
-                <!-- Recent Activity -->
                 <div class="github-section">
                     <h3 class="github-section-title">
-                        <i class="fas fa-history"></i> Recent Activity
+                        <i class="fas fa-history" aria-hidden="true"></i> Recent Activity
                     </h3>
-                    <div id="github-activity-list" class="activity-list">
+                    <div id="github-activity-list" class="activity-list" aria-live="polite" aria-busy="true">
                         <div class="activity-loading">
-                            <i class="fas fa-spinner fa-spin"></i> Loading activity...
+                            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Loading activity...
                         </div>
                     </div>
                 </div>
 
-                <!-- Top Repositories -->
                 <div class="github-section">
                     <h3 class="github-section-title">
-                        <i class="fas fa-folder"></i> Top Repositories
+                        <i class="fas fa-folder" aria-hidden="true"></i> Top Repositories
                     </h3>
-                    <div id="github-repos-list" class="repos-list">
+                    <div id="github-repos-list" class="repos-list" aria-live="polite" aria-busy="true">
                         <div class="repos-loading">
-                            <i class="fas fa-spinner fa-spin"></i> Loading repositories...
+                            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Loading repositories...
                         </div>
                     </div>
                 </div>
@@ -378,40 +426,40 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" aria-labelledby="contact-title">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
+            <h2 class="section-title" id="contact-title">Let's Connect</h2>
             <div class="contact-wrapper">
                 <div class="contact-info-section">
                     <p class="contact-description">Looking for an AI architect who ships production systems, not prototypes?</p>
                     <div class="contact-details">
                         <div class="contact-detail">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                             <a href="mailto:sarveshganesan2002@gmail.com">sarveshganesan2002@gmail.com</a>
                         </div>
                         <div class="contact-detail">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-phone" aria-hidden="true"></i>
                             <a href="tel:+918668063705">+91 8668063705</a>
                         </div>
                         <div class="contact-detail">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://linkedin.com/in/sarvesh-ganesan09" target="_blank">LinkedIn Profile</a>
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <a href="https://linkedin.com/in/sarvesh-ganesan09" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
                         </div>
                         <div class="contact-detail">
-                            <i class="fab fa-github"></i>
-                            <a href="https://github.com/Sarvesh-GanesanW" target="_blank">GitHub Profile</a>
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <a href="https://github.com/Sarvesh-GanesanW" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form-section">
-                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/xwpkvqaw" method="POST">
+                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/xwpkvqaw" method="POST" novalidate>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                            <input type="text" id="name" name="name" required placeholder="Your Name" autocomplete="name">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="_replyto" required placeholder="your.email@example.com">
+                            <input type="email" id="email" name="_replyto" required placeholder="your.email@example.com" autocomplete="email">
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
@@ -422,22 +470,25 @@
                             <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" id="submit-btn">
-                            <i class="fas fa-paper-plane"></i> Send Message
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
                         </button>
                         <input type="hidden" name="_next" value="#contact">
                         <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="honeypot" aria-hidden="true">
                     </form>
-                    <div id="form-status" class="form-status"></div>
+                    <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
                 </div>
             </div>
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
-        <p>Sarvesh Ganesan. Architecting AI systems that ship.</p>
+        <p>&copy; <span id="footer-year">2026</span> Sarvesh Ganesan. Architecting AI systems that ship.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

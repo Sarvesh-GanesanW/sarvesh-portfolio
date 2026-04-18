@@ -1,47 +1,44 @@
-# Sarvesh Ganesan - Portfolio
+# Sarvesh Ganesan — Portfolio
 
-AI Research Engineer portfolio showcasing expertise in Generative AI, LangChain, RAG systems, and cloud infrastructure.
+Personal portfolio site for Sarvesh Ganesan, Lead AI Architect.
 
-## Features
+Live: **https://sarveshganesan.in**
 
-- **Neo-Brutalist Design**: Modern neo-brutalist aesthetic with bold borders and offset shadows
-- **Dark Mode**: Toggle between light and dark themes with localStorage persistence
-- **GitHub Activity Dashboard**: Live stats, recent commits, and top repositories
-- **Responsive**: Mobile-first design optimized for all screen sizes
-- **Performance Optimized**: Lazy loading, caching, and resource hints
+## Stack
 
-## Tech Stack
+Static site: hand-written HTML + CSS + vanilla JavaScript. No build step.
 
-- HTML5, CSS3, JavaScript (ES6+)
-- GitHub API integration
-- Font Awesome icons
-- Google Fonts (Inter & JetBrains Mono)
+- `index.html` — landing page
+- `style.css` — single stylesheet, CSS custom properties drive light/dark themes
+- `script.js` — theme toggle, mobile nav, smooth scroll, GitHub activity dashboard, contact form
+- `Sarvesh_Resume.pdf` — downloadable resume
+- `sitemap.xml`, `robots.txt`, `404.html` — SEO / UX infra
+- `CNAME` — GitHub Pages custom domain config
 
-## Sections
+## Local dev
 
-- **About**: Professional summary and expertise highlights
-- **Experience**: Work history with detailed responsibilities
-- **Skills**: Technical capabilities organized by category
-- **Projects**: Featured AI/ML projects with GitHub links
-- **GitHub**: Real-time activity dashboard and repository stats
-- **Contact**: Contact information and form
+```bash
+npm install
+npm run serve        # http://localhost:8080
+npm run lint         # html + css + js
+npm run format       # prettier
+```
 
-## Setup
+## Deploy
 
-This portfolio is hosted on GitHub Pages at: `https://sarvesh-ganesanw.github.io/sarvesh-portfolio/`
+Pushed to `main` → GitHub Pages publishes automatically. Custom domain `sarveshganesan.in` is bound via `CNAME` file + DNS ALIAS to `Sarvesh-GanesanW.github.io`.
 
-To deploy:
+## Accessibility & performance notes
 
-1. Go to Settings → Pages
-2. Source: Deploy from a branch
-3. Branch: main, Folder: / (root)
-
-## Performance
-
-- Preconnect hints for external resources
-- Lazy loading for GitHub API data
-- 10-minute cache for API responses
-- IntersectionObserver for scroll animations
+- `prefers-reduced-motion` respected across animations, smooth scroll, fade-ins, custom cursor
+- Custom cursor only initialized on fine-pointer non-touch devices
+- Focus-visible rings on all interactive controls
+- Semantic landmarks (`<main>`, `<nav aria-label>`, `<section aria-labelledby>`)
+- Single `<h1>`, proper heading hierarchy
+- JSON-LD `Person` schema, OpenGraph / Twitter Card metadata
+- Fonts loaded via `preload` + async stylesheet swap
+- GitHub dashboard lazy-loads via IntersectionObserver with rate-limit handling
+- Contact form: honeypot, 15s fetch timeout, `role="status"` with `aria-live`
 
 ## Contact
 
