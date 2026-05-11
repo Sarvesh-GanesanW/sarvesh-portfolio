@@ -1,0 +1,98 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.52in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlist[itemize]{leftmargin=0.18in, itemsep=2pt, topsep=2pt}
+
+\titleformat{\section}
+  {\large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\titlerule]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+
+\newcommand{\resumeRole}[4]{
+  \textbf{#1} \hfill #2 \\
+  #3 \hfill #4
+}
+
+\newcommand{\resumeProject}[3]{
+  \textbf{#1} \textbar{} #2 \hfill #3
+}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{SARVESH GANESAN}}\\
+India \textbar{} +91 8668063705 \textbar{} \href{mailto:sarveshganesan2002@gmail.com}{sarveshganesan2002@gmail.com} \textbar{}
+\href{https://linkedin.com/in/sarvesh-ganesan09}{linkedin.com/in/sarvesh-ganesan09} \textbar{}
+\href{https://github.com/Sarvesh-GanesanW}{github.com/Sarvesh-GanesanW}
+\end{center}
+
+\section*{Professional Summary}
+Lead AI Architect with 2.5+ years of experience building and shipping a cloud-native enterprise data platform from the ground up. Major architect of 12+ production microservices spanning agentic AI, distributed ETL, data lakehousing, and MLOps, all running on AWS EKS. Proven track record of turning ambiguous product requirements into scalable, cost-optimized systems that serve real enterprise workloads.
+
+\section*{Technical Skills}
+\begin{itemize}
+  \item \textbf{Languages \& Frameworks:} Python, FastAPI, Flask, REST APIs, gRPC, SSE streaming
+  \item \textbf{AI / LLM:} AWS Bedrock, Strands Agents, LangChain, LangGraph, RAG systems, MCP
+  \item \textbf{Data Engineering:} Apache Spark, Apache Iceberg, DuckDB, Pandas, PyArrow, Polars
+  \item \textbf{Databases:} PostgreSQL, pgvector, Redis, Pinecone, MongoDB, Elasticsearch, DynamoDB
+  \item \textbf{Cloud \& Infra:} AWS (EKS, Bedrock, S3, Lambda, ECR, CloudWatch), Docker, Kubernetes, Karpenter
+  \item \textbf{MLOps:} MLflow, Jupyter, PyTorch, TensorFlow, scikit-learn, Docker-based GPU runtimes
+\end{itemize}
+
+\section*{Experience}
+\resumeRole{Lead AI Architect}{Sep 2023 -- Mar 2026}{Groundzero Software Private Limited}{Chennai, India}
+\begin{itemize}
+  \item Owned the entire backend architecture end-to-end, designing and shipping 12+ production microservices for agentic chat, data providers, ETL orchestration, Iceberg lakehouse APIs, MLOps, and Spark/DuckDB runtimes as the sole backend engineer.
+  \item Built a multi-agent AI system that lets enterprise users query databases, build dashboards, run ETL jobs, and manage notebooks through natural language, reducing time-to-insight from hours of manual work to seconds of conversation.
+  \item Scaled data connectivity to 69+ sources through a dynamically loaded connector architecture with role-based authorization and schema introspection caching.
+  \item Reduced RAG query latency by 90\% using hybrid vector plus full-text retrieval with neural reranking, enabling real-time document Q\&A at production scale.
+  \item Delivered sub-10s query performance on 100M+ row datasets by architecting a TB-scale Apache Iceberg lakehouse with Spark and DuckDB compute engines.
+  \item Cut LLM inference costs with three-tier model routing, Anthropic prompt caching, and per-request token tracking across agent workflows.
+  \item Designed the ETL orchestration layer for job submission, multi-job chaining, container log streaming from EKS pods, and dataset lineage across Spark, DuckDB, and Pandas engines.
+  \item Stood up MLOps and platform infrastructure with MLflow, Jupyter lifecycle management on EKS, GPU training containers, Karpenter autoscaling, and 99.9\% uptime across multi-tenant deployments.
+\end{itemize}
+
+\resumeRole{Software Trainee}{Jun 2023 -- Aug 2023}{SCI-BI Software Solutions Private Limited}{Chennai, India}
+\begin{itemize}
+  \item Built client-facing dashboards and reports in Power BI and Tableau, and translated client requirements into technical specifications.
+\end{itemize}
+
+\section*{Projects}
+\resumeProject{SRE Tea MCP Server}{Node.js, Model Context Protocol, Claude, JWT, AWS Lambda}{\href{https://github.com/Sarvesh-GanesanW/sre-tea-mcp}{GitHub}}
+\begin{itemize}
+  \item Built a production MCP server for live tea e-commerce administration, exposing 46 tools across orders, products, customers, inventory, invoices, logistics, churn analytics, and reporting with automatic token refresh and parallel API aggregation.
+  \item Integrated Claude Desktop, Claude Code, and custom MCP clients over STDIO transport with secure environment-based credentials, structured stderr logging, and automatic recovery from expired JWT sessions.
+\end{itemize}
+
+\resumeProject{Qualipilot Data Quality Checker}{Python, Polars, Dask, cuDF, AWS Bedrock}{\href{https://github.com/Sarvesh-GanesanW/dataqualitychecker}{GitHub}}
+\begin{itemize}
+  \item Built a production data-quality CLI/library with missing, duplicate, type, range, outlier, cardinality, and freshness checks, CI severity gates, HTML/JSON/Markdown reports, and optional LLM narration through Bedrock, Ollama, or OpenAI-compatible endpoints.
+  \item Implemented swappable Polars, Pandas, Dask, and cuDF engines with typed Pydantic results, deterministic JSON output, Docker/Lambda deployment paths, and probabilistic record linkage for deduplication.
+\end{itemize}
+
+\resumeProject{PlannerAgent}{LangGraph, Anthropic, AWS Bedrock, Python}{\href{https://github.com/Sarvesh-GanesanW/PlannerAgent}{GitHub}}
+\begin{itemize}
+  \item Built a conversational planning agent supporting 10+ turn dialogues, clarifying questions, persistent compressed sessions, versioned plans, 12+ templates, Gantt charts, and Trello/CSV/Markdown import/export.
+  \item Implemented explicit LangGraph state flow, context compaction near token limits, pickle+gzip session storage, undo/redo history, provider switching across Anthropic and Bedrock, and 40+ tests.
+\end{itemize}
+
+\section*{Education}
+\textbf{Bachelor of Technology: Computer Science and Engineering} \hfill May 2023\\
+Specialization in Artificial Intelligence and Machine Learning \hfill GPA: 9.08\\
+SRM Institute of Science and Technology, Chennai
+
+\section*{Languages}
+English (Fluent) \textbar{} Tamil (Native) \textbar{} Telugu (Fluent) \textbar{} Hindi (Intermediate)
+
+\end{document}
