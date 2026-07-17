@@ -102,24 +102,6 @@ body {
     font-size: 16px;
 }
 
-/* Skip link for keyboard users */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--accent-cyan);
-    color: var(--text-charcoal);
-    padding: 0.75rem 1rem;
-    z-index: 10000;
-    text-decoration: none;
-    font-weight: 700;
-    border: var(--border-width) solid var(--border-color);
-}
-
-.skip-link:focus {
-    top: 0;
-}
-
 /* Honeypot (spam trap) */
 .honeypot {
     position: absolute;
