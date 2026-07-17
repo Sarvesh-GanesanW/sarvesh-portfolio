@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /.github/
 
-Sitemap: https://sarveshganesan.in/sitemap.xml
+Sitemap: https://sarvesh-ganesanw.github.io/sarvesh-portfolio/sitemap.xml

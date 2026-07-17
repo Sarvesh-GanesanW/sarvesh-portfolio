@@ -50,7 +50,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v11
         with:
           urls: |
-            https://sarveshganesan.in/
+            https://sarvesh-ganesanw.github.io/sarvesh-portfolio/
           uploadArtifacts: true
           temporaryPublicStorage: true
         continue-on-error: true

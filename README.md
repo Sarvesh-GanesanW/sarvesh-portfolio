@@ -2,7 +2,7 @@
 
 Personal portfolio site for Sarvesh Ganesan, Lead AI Architect.
 
-Live: **https://sarveshganesan.in**
+Live: **https://sarvesh-ganesanw.github.io/sarvesh-portfolio/**
 
 ## Stack
 
@@ -13,7 +13,6 @@ Static site: hand-written HTML + CSS + vanilla JavaScript. No build step.
 - `script.js` — theme toggle, mobile nav, smooth scroll, GitHub activity dashboard, contact form
 - `Sarvesh_Resume.pdf` — downloadable resume
 - `sitemap.xml`, `robots.txt`, `404.html` — SEO / UX infra
-- `CNAME` — GitHub Pages custom domain config
 
 ## Local dev
 
@@ -26,7 +25,8 @@ npm run format       # prettier
 
 ## Deploy
 
-Pushed to `main` → GitHub Pages publishes automatically. Custom domain `sarveshganesan.in` is bound via `CNAME` file + DNS ALIAS to `Sarvesh-GanesanW.github.io`.
+Pushed to `main` → GitHub Pages publishes automatically at the repository's
+GitHub Pages URL.
 
 ## Accessibility & performance notes
 
