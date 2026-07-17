@@ -10,9 +10,11 @@ Static site: hand-written HTML + CSS + vanilla JavaScript. No build step.
 
 - `index.html` — landing page
 - `style.css` — single stylesheet, CSS custom properties drive light/dark themes
-- `script.js` — theme toggle, mobile nav, smooth scroll, GitHub activity dashboard, contact form
+- `script.js` — theme toggle, mobile navigation, animations, contact form, and date-based experience
+  counter
 - `Sarvesh_Resume.pdf` — downloadable resume
-- `sitemap.xml`, `robots.txt`, `404.html` — SEO / UX infra
+- `og-image.png`, `favicon.svg` — social preview and browser identity
+- `sitemap.xml`, `robots.txt`, `404.html` — SEO and UX infrastructure
 
 ## Local dev
 
@@ -25,8 +27,7 @@ npm run format       # prettier
 
 ## Deploy
 
-Pushed to `main` → GitHub Pages publishes automatically at the repository's
-GitHub Pages URL.
+Pushed to `main` → GitHub Pages publishes automatically at the repository's GitHub Pages URL.
 
 ## Accessibility & performance notes
 
@@ -37,7 +38,7 @@ GitHub Pages URL.
 - Single `<h1>`, proper heading hierarchy
 - JSON-LD `Person` schema, OpenGraph / Twitter Card metadata
 - Fonts loaded via `preload` + async stylesheet swap
-- GitHub dashboard lazy-loads via IntersectionObserver with rate-limit handling
+- Featured projects are static, verified case studies with no API-rate-limit dependency
 - Contact form: honeypot, 15s fetch timeout, `role="status"` with `aria-live`
 
 ## Contact

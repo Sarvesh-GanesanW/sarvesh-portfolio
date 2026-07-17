@@ -152,7 +152,7 @@ def _story(styles: dict[str, ParagraphStyle], width: float) -> list[Flowable]:
     story: list[Flowable] = [
         Paragraph("SARVESH GANESAN", styles["name"]),
         Paragraph(
-            "India | +91 8668063705 | "
+            "India | "
             '<a href="mailto:sarveshganesan2002@gmail.com" color="black">'
             "sarveshganesan2002@gmail.com</a> | "
             '<a href="https://linkedin.com/in/sarvesh-ganesan09" '
@@ -163,13 +163,12 @@ def _story(styles: dict[str, ParagraphStyle], width: float) -> list[Flowable]:
         ),
         *_section("PROFESSIONAL SUMMARY", styles),
         Paragraph(
-            "Lead AI Architect with 2.5+ years of experience building and "
-            "shipping a cloud-native enterprise data platform from the ground "
-            "up. Major architect of 12+ production microservices spanning "
-            "agentic AI, distributed ETL, data lakehousing, and MLOps, all "
-            "running on AWS EKS. Proven track record of turning ambiguous "
-            "product requirements into scalable, cost-optimized systems that "
-            "serve real enterprise workloads.",
+            "Lead AI Architect with 3+ years of experience building and "
+            "shipping cloud-native AI and data platforms. Architected 12+ "
+            "production microservices spanning agentic AI, distributed ETL, "
+            "data lakehousing, and MLOps on AWS EKS. Proven track record of "
+            "turning ambiguous product requirements into scalable, "
+            "cost-optimized systems for enterprise workloads.",
             styles["body"],
         ),
         *_section("TECHNICAL SKILLS", styles),
@@ -363,6 +362,20 @@ def _roles() -> tuple[Role, ...]:
 def _projects() -> tuple[Project, ...]:
     return (
         Project(
+            title="PayPal Agent",
+            tech="Python, LangGraph, FastAPI, pgvector, AWS Bedrock",
+            url="https://github.com/Sarvesh-GanesanW/paypal-agent",
+            bullets=(
+                "Built a PayPal tool router and execution service covering "
+                "116 API operations with multi-provider model routing, "
+                "hybrid RAG, guarded mutation flows, OAuth token caching, "
+                "and a terminal UI.",
+                "Added strict Pydantic routing, sandbox execution, "
+                "metadata-only memory, LangSmith tracing, and recorded demo "
+                "artifacts for a complete, verifiable workflow.",
+            ),
+        ),
+        Project(
             title="SRE Tea MCP Server",
             tech="Node.js, Model Context Protocol, Claude, JWT, AWS Lambda",
             url="https://github.com/Sarvesh-GanesanW/sre-tea-mcp",
@@ -392,21 +405,6 @@ def _projects() -> tuple[Project, ...]:
                 "with typed Pydantic results, deterministic JSON output, "
                 "Docker/Lambda deployment paths, and probabilistic record "
                 "linkage for deduplication.",
-            ),
-        ),
-        Project(
-            title="PlannerAgent",
-            tech="LangGraph, Anthropic, AWS Bedrock, Python",
-            url="https://github.com/Sarvesh-GanesanW/PlannerAgent",
-            bullets=(
-                "Built a conversational planning agent supporting 10+ turn "
-                "dialogues, clarifying questions, persistent compressed "
-                "sessions, versioned plans, 12+ templates, Gantt charts, and "
-                "Trello/CSV/Markdown import/export.",
-                "Implemented explicit LangGraph state flow, context "
-                "compaction near token limits, pickle+gzip session storage, "
-                "undo/redo history, provider switching across Anthropic and "
-                "Bedrock, and 40+ tests.",
             ),
         ),
     )
