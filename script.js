@@ -553,6 +553,21 @@ function initializeFooterYear() {
     if (el) el.textContent = new Date().getFullYear();
 }
 
+function initializeExperienceYears() {
+    const el = document.getElementById('experience-years');
+    if (!el) return;
+
+    const startDate = new Date(`${el.dataset.startDate}T00:00:00`);
+    const today = new Date();
+    let years = today.getFullYear() - startDate.getFullYear();
+    const anniversaryPending = today.getMonth() < startDate.getMonth()
+        || (today.getMonth() === startDate.getMonth()
+            && today.getDate() < startDate.getDate());
+
+    if (anniversaryPending) years -= 1;
+    el.textContent = `${Math.max(0, years)}+ years`;
+}
+
 function bootstrap() {
     initializeDarkMode();
     initializeMobileNav();
@@ -563,6 +578,7 @@ function bootstrap() {
     initializeCustomCursor();
     initializeContactForm();
     initializeGitHubSection();
+    initializeExperienceYears();
     initializeFooterYear();
 }
 
