@@ -1,6 +1,6 @@
 \documentclass[10pt,letterpaper]{article}
 
-\usepackage[margin=0.52in]{geometry}
+\usepackage[top=0.3in, bottom=0.3in, left=0.5in, right=0.5in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -8,8 +8,8 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
-\setlist[itemize]{leftmargin=0.18in, itemsep=2pt, topsep=2pt}
+\setlength{\parskip}{1pt}
+\setlist[itemize]{leftmargin=0.18in, itemsep=0pt, parsep=0pt, topsep=1pt, partopsep=0pt}
 
 \titleformat{\section}
   {\large\bfseries}
@@ -17,7 +17,7 @@
   {0pt}
   {}
   [\titlerule]
-\titlespacing*{\section}{0pt}{7pt}{4pt}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
 
 \newcommand{\resumeRole}[4]{
   \textbf{#1} \hfill #2 \\
@@ -37,6 +37,8 @@ India \textbar{} +91 8668063705 \textbar{} \href{mailto:sarveshganesan2002@gmail
 Portfolio: \href{https://sarvesh-ganesanw.github.io/sarvesh-portfolio/}{sarvesh-ganesanw.github.io/sarvesh-portfolio} \textbar{}
 GitHub: \href{https://github.com/Sarvesh-GanesanW}{github.com/Sarvesh-GanesanW}
 \end{center}
+
+\small
 
 \section*{Professional Summary}
 Lead AI Architect with 3+ years of experience building and shipping a cloud-native enterprise data and AI platform from the ground up. Architect of 20+ production services and runtimes spanning agentic AI, a semantic layer, column-level lineage, an Iceberg lakehouse, and MLOps on AWS EKS, plus the React frontend. Proven record of turning ambiguous product requirements into scalable, governed, cost-optimized systems for enterprise workloads.
@@ -70,25 +72,24 @@ Lead AI Architect with 3+ years of experience building and shipping a cloud-nati
 \end{itemize}
 
 \section*{Projects}
-\resumeProject{SRE Tea MCP Server}{Node.js, Model Context Protocol, Claude, JWT, AWS Lambda}{\href{https://github.com/Sarvesh-GanesanW/sre-tea-mcp}{GitHub}}
+\resumeProject{Tea Distribution Commerce \& ERP Platform}{FastAPI, PostgreSQL, Redis, Celery, React, AWS}{Private}
 \begin{itemize}
-  \item Built an MCP server for live tea e-commerce administration exposing 46 tools across orders, products, inventory, invoices, logistics, and churn analytics, integrated with Claude Desktop and Claude Code, with automatic JWT session recovery.
+  \item Built alone the software a tea distributor runs on: storefront, B2B bulk-order portal, and a 37-screen back office over FastAPI with 41 admin modules (GST e-invoicing, ledgers, AR aging, bank reconciliation, credit scoring); 400+ commits, on AWS or self-hosted.
 \end{itemize}
 
-\resumeProject{Qualipilot Data Quality Checker}{Python, Polars, Dask, cuDF, AWS Bedrock}{\href{https://github.com/Sarvesh-GanesanW/dataqualitychecker}{GitHub}}
+\resumeProject{WhatsApp Ordering Agent \& MCP Server}{LangGraph, AWS Bedrock, WhatsApp API, MCP, Node.js}{\href{https://github.com/Sarvesh-GanesanW/sre-tea-mcp}{GitHub}}
 \begin{itemize}
-  \item Built a data-quality CLI and library with swappable Polars, Pandas, Dask, and cuDF engines, CI severity gates, HTML/JSON/Markdown reports, record linkage for deduplication, and optional LLM narration through Bedrock or Ollama.
+  \item Built a LangGraph agent on Bedrock that takes orders over WhatsApp (customer lookup by phone, credit checks, order tracking and repeats, UPI payment links), plus an MCP server that gives Claude 76 back-office tools with automatic JWT session recovery.
 \end{itemize}
 
-\resumeProject{PlannerAgent}{LangGraph, Anthropic, AWS Bedrock, Python}{\href{https://github.com/Sarvesh-GanesanW/PlannerAgent}{GitHub}}
+\resumeProject{gz: Data Platform CLI}{Rust, Tokio, Ratatui, Apache Iceberg}{\href{https://github.com/Sarvesh-GanesanW/gz-cli}{GitHub}}
 \begin{itemize}
-  \item Built a conversational planning agent with explicit LangGraph state flow, clarifying questions, context compaction, versioned plans, Gantt charts, Trello/CSV/Markdown import and export, provider switching, and 40+ tests.
+  \item Built a single-binary Rust CLI and terminal UI (130k lines, 1,500+ tests) whose commands bisect a table's history to the breaking commit, trace dashboard figures to their sources, trial job changes on table branches, and hand failed runs to an AI assistant.
 \end{itemize}
 
 \section*{Education}
 \textbf{Bachelor of Technology in Computer Science and Engineering} \hfill May 2023\\
-Specialization in Artificial Intelligence and Machine Learning \hfill GPA: 9.08\\
-SRM Institute of Science and Technology, Chennai
+Specialization in Artificial Intelligence and Machine Learning, SRM Institute of Science and Technology, Chennai \hfill GPA: 9.08
 
 \textbf{Languages:} English (Fluent) \textbar{} Tamil (Native) \textbar{} Telugu (Fluent) \textbar{} Hindi (Intermediate)
 
