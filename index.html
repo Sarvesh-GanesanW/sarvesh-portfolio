@@ -465,9 +465,11 @@
                                 <span class="flow-num">02</span>
                                 <h3>Route</h3>
                                 <p>
-                                    A router picks the model for this turn from 14 models across
-                                    Anthropic, OpenAI, xAI and Moonshot. Prompt caching cuts the
-                                    cost of repeat context, and the cost ledger reserves budget
+                                    A router sorts the question as simple, moderate or complex,
+                                    which sets its token budget and gives the agent only the tool
+                                    groups it needs. The model is the one the user picked from 14
+                                    across Anthropic, OpenAI, xAI and Moonshot; prompt caching cuts
+                                    the cost of repeat context, and the cost ledger reserves budget
                                     before the call goes out.
                                 </p>
                             </li>
