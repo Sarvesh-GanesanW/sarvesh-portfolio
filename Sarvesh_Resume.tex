@@ -21,46 +21,47 @@
 
 \newcommand{\resumeRole}[4]{
   \textbf{#1} \hfill #2 \\
-  #3 \hfill #4
+  \textit{#3} \hfill \textit{#4}
 }
 
 \newcommand{\resumeProject}[3]{
-  \textbf{#1} \textbar{} #2 \hfill #3
+  \textbf{#1} \textbar{} \textbf{\textit{#2}} \hfill #3
 }
 
 \begin{document}
 
 \begin{center}
-{\Large \textbf{SARVESH GANESAN}}\\
-India \textbar{} \href{mailto:sarveshganesan2002@gmail.com}{sarveshganesan2002@gmail.com} \textbar{}
-\href{https://linkedin.com/in/sarvesh-ganesan09}{linkedin.com/in/sarvesh-ganesan09} \textbar{}
-\href{https://github.com/Sarvesh-GanesanW}{github.com/Sarvesh-GanesanW}
+{\Huge \textbf{Sarvesh Ganesan}}\\[2pt]
+India \textbar{} +91 8668063705 \textbar{} \href{mailto:sarveshganesan2002@gmail.com}{sarveshganesan2002@gmail.com} \textbar{}
+\href{https://linkedin.com/in/sarvesh-ganesan09}{linkedin.com/in/sarvesh-ganesan09}\\
+Portfolio: \href{https://sarvesh-ganesanw.github.io/sarvesh-portfolio/}{sarvesh-ganesanw.github.io/sarvesh-portfolio} \textbar{}
+GitHub: \href{https://github.com/Sarvesh-GanesanW}{github.com/Sarvesh-GanesanW}
 \end{center}
 
 \section*{Professional Summary}
-Lead AI Architect with 3+ years of experience building and shipping cloud-native AI and data platforms. Architected 12+ production microservices spanning agentic AI, distributed ETL, data lakehousing, and MLOps on AWS EKS. Proven track record of turning ambiguous product requirements into scalable, cost-optimized systems for enterprise workloads.
+Lead AI Architect with 3+ years of experience building and shipping a cloud-native enterprise data and AI platform from the ground up. Architect of 20+ production services and runtimes spanning agentic AI, a semantic layer, column-level lineage, an Iceberg lakehouse, and MLOps on AWS EKS, plus the React frontend. Proven record of turning ambiguous product requirements into scalable, governed, cost-optimized systems for enterprise workloads.
 
 \section*{Technical Skills}
-\begin{itemize}
-  \item \textbf{Languages \& Frameworks:} Python, FastAPI, Flask, REST APIs, gRPC, SSE streaming
-  \item \textbf{AI / LLM:} AWS Bedrock, Strands Agents, LangChain, LangGraph, RAG systems, MCP
-  \item \textbf{Data Engineering:} Apache Spark, Apache Iceberg, DuckDB, Pandas, PyArrow, Polars
-  \item \textbf{Databases:} PostgreSQL, pgvector, Redis, Pinecone, MongoDB, Elasticsearch, DynamoDB
-  \item \textbf{Cloud \& Infra:} AWS (EKS, Bedrock, S3, Lambda, ECR, CloudWatch), Docker, Kubernetes, Karpenter
-  \item \textbf{MLOps:} MLflow, Jupyter, PyTorch, TensorFlow, scikit-learn, Docker-based GPU runtimes
-\end{itemize}
+\textbf{Languages \& Frameworks:} Python, JavaScript, React, Node.js, FastAPI, Flask, REST APIs, gRPC, SSE streaming\\
+\textbf{AI / LLM:} AWS Bedrock (Claude, GPT, Grok, Kimi), Strands Agents, LangChain, LangGraph, RAG, Model Context Protocol (MCP), Presidio, ONNX\\
+\textbf{Data Engineering:} Apache Spark 4, Apache Iceberg (REST catalog), DuckDB, Arrow, Pandas, Polars, OpenLineage, OData v4\\
+\textbf{Databases:} PostgreSQL, pgvector, Redis, Pinecone, MongoDB, Elasticsearch, DynamoDB\\
+\textbf{Cloud \& Infrastructure:} AWS EKS, Bedrock, S3, Lambda, Cognito, ECR, CloudWatch, Docker, Kubernetes, Helm, Karpenter\\
+\textbf{MLOps \& Testing:} MLflow, Jupyter, PyTorch, TensorFlow, scikit-learn, GPU runtimes, pytest, Jest, React Testing Library
 
 \section*{Experience}
-\resumeRole{Lead AI Architect}{Sep 2023 -- Mar 2026}{Groundzero Software Private Limited}{Chennai, India}
+\resumeRole{Lead AI Architect}{Sep 2023 -- Present}{Groundzero Software Private Limited}{Chennai, India}
 \begin{itemize}
-  \item Owned the entire backend architecture end-to-end, designing and shipping 12+ production microservices for agentic chat, data providers, ETL orchestration, Iceberg lakehouse APIs, MLOps, and Spark/DuckDB runtimes as the sole backend engineer.
-  \item Built a multi-agent AI system that lets enterprise users query databases, build dashboards, run ETL jobs, and manage notebooks through natural language, reducing time-to-insight from hours of manual work to seconds of conversation.
-  \item Scaled data connectivity to 69+ sources through a dynamically loaded connector architecture with role-based authorization and schema introspection caching.
-  \item Reduced RAG query latency by 90\% using hybrid vector plus full-text retrieval with neural reranking, enabling real-time document Q\&A at production scale.
-  \item Delivered sub-10s query performance on 100M+ row datasets by architecting a TB-scale Apache Iceberg lakehouse with Spark and DuckDB compute engines.
-  \item Cut LLM inference costs with three-tier model routing, Anthropic prompt caching, and per-request token tracking across agent workflows.
-  \item Designed the ETL orchestration layer for job submission, multi-job chaining, container log streaming from EKS pods, and dataset lineage across Spark, DuckDB, and Pandas engines.
-  \item Stood up MLOps and platform infrastructure with MLflow, Jupyter lifecycle management on EKS, GPU training containers, Karpenter autoscaling, and 99.9\% uptime across multi-tenant deployments.
+  \item Owned end-to-end architecture of the Groundzero platform across 20+ production services and runtimes and its React frontend: agentic chat, custom agents, data connectors, ETL, Iceberg lakehouse, lineage, ontology, and MLOps.
+  \item Built an agentic AI analyst with 100 tools that queries databases, builds charts and dashboards, writes and runs notebook and ETL code, diagnoses failed jobs from logs, and generates PDF, DOCX, and XLSX files, with human approval gates for risky tools, live mid-run steering, 14 models across Anthropic, OpenAI, xAI, and Moonshot, and an MCP server with OAuth for external AI clients.
+  \item Built Ontology Studio, a semantic layer of entities, relationships, metrics, terms, and rules bootstrapped from lineage, curated by AI on demand, reviewed by data stewards, and published as versioned releases that ground every chat and agent answer with definition citations and lineage-based drift detection.
+  \item Built column-level data lineage across Spark, DuckDB, Iceberg SQL, and 75+ connectors, combining runtime capture with a static code compiler, OpenLineage events, downstream impact analysis, permission masking, and table and column exports.
+  \item Designed a no-code Agent Builder for custom AI agents with chosen models, tools, and approval steps, adding Presidio PII redaction, ONNX content guardrails, AI-judge quality scoring, governance evidence, external access tokens, and quotas.
+  \item Cut LLM costs with model routing, prompt caching, and a per-call cost ledger with budget reservation and settlement; moving background AI jobs to a lighter model cut log-analysis cost about 11x in live evaluations.
+  \item Delivered sub-10-second queries on 100M+ row datasets on a TB-scale Iceberg lakehouse, later upgraded to Spark 4 and Iceberg 1.11 with a REST catalog, scoped credential vending to external engines, per-statement authorization, policy masking, audit logging, and async queries with resumable Arrow-paged results.
+  \item Reduced RAG query latency by 90\% using hybrid vector and full-text retrieval with neural reranking, plus OCR of scanned PDFs, enabling real-time document question answering at production scale.
+  \item Built headroom-scaler, a Kubernetes node autoscaler written from scratch in Python that provisions capacity ahead of scheduled demand, with bin-packing, lease-based leader election, AWS and KWOK providers, a Helm chart, and 90 tests; ran MLOps with MLflow, Jupyter on EKS, and GPU runtimes at 99.9\% uptime across multi-tenant deployments.
+  \item Hardened multi-tenant runtimes with pooled session pods, policy-aware Redis result caching, sandboxed user code, and secret redaction, backed by 1,200+ automated tests in the chat service alone.
 \end{itemize}
 
 \resumeRole{Software Trainee}{Jun 2023 -- Aug 2023}{SCI-BI Software Solutions Private Limited}{Chennai, India}
@@ -69,30 +70,26 @@ Lead AI Architect with 3+ years of experience building and shipping cloud-native
 \end{itemize}
 
 \section*{Projects}
-\resumeProject{PayPal Agent}{Python, LangGraph, FastAPI, pgvector, AWS Bedrock}{\href{https://github.com/Sarvesh-GanesanW/paypal-agent}{GitHub}}
-\begin{itemize}
-  \item Built a PayPal tool router and execution service covering 116 API operations with multi-provider model routing, hybrid RAG, guarded mutation flows, OAuth token caching, and a terminal UI.
-  \item Added strict Pydantic routing, sandbox execution, metadata-only memory, LangSmith tracing, and recorded demo artifacts for a complete, verifiable workflow.
-\end{itemize}
-
 \resumeProject{SRE Tea MCP Server}{Node.js, Model Context Protocol, Claude, JWT, AWS Lambda}{\href{https://github.com/Sarvesh-GanesanW/sre-tea-mcp}{GitHub}}
 \begin{itemize}
-  \item Built a production MCP server for live tea e-commerce administration, exposing 46 tools across orders, products, customers, inventory, invoices, logistics, churn analytics, and reporting with automatic token refresh and parallel API aggregation.
-  \item Integrated Claude Desktop, Claude Code, and custom MCP clients over STDIO transport with secure environment-based credentials, structured stderr logging, and automatic recovery from expired JWT sessions.
+  \item Built an MCP server for live tea e-commerce administration exposing 46 tools across orders, products, inventory, invoices, logistics, and churn analytics, integrated with Claude Desktop and Claude Code, with automatic JWT session recovery.
 \end{itemize}
 
 \resumeProject{Qualipilot Data Quality Checker}{Python, Polars, Dask, cuDF, AWS Bedrock}{\href{https://github.com/Sarvesh-GanesanW/dataqualitychecker}{GitHub}}
 \begin{itemize}
-  \item Built a production data-quality CLI/library with missing, duplicate, type, range, outlier, cardinality, and freshness checks, CI severity gates, HTML/JSON/Markdown reports, and optional LLM narration through Bedrock, Ollama, or OpenAI-compatible endpoints.
-  \item Implemented swappable Polars, Pandas, Dask, and cuDF engines with typed Pydantic results, deterministic JSON output, Docker/Lambda deployment paths, and probabilistic record linkage for deduplication.
+  \item Built a data-quality CLI and library with swappable Polars, Pandas, Dask, and cuDF engines, CI severity gates, HTML/JSON/Markdown reports, record linkage for deduplication, and optional LLM narration through Bedrock or Ollama.
+\end{itemize}
+
+\resumeProject{PlannerAgent}{LangGraph, Anthropic, AWS Bedrock, Python}{\href{https://github.com/Sarvesh-GanesanW/PlannerAgent}{GitHub}}
+\begin{itemize}
+  \item Built a conversational planning agent with explicit LangGraph state flow, clarifying questions, context compaction, versioned plans, Gantt charts, Trello/CSV/Markdown import and export, provider switching, and 40+ tests.
 \end{itemize}
 
 \section*{Education}
-\textbf{Bachelor of Technology: Computer Science and Engineering} \hfill May 2023\\
+\textbf{Bachelor of Technology in Computer Science and Engineering} \hfill May 2023\\
 Specialization in Artificial Intelligence and Machine Learning \hfill GPA: 9.08\\
 SRM Institute of Science and Technology, Chennai
 
-\section*{Languages}
-English (Fluent) \textbar{} Tamil (Native) \textbar{} Telugu (Fluent) \textbar{} Hindi (Intermediate)
+\textbf{Languages:} English (Fluent) \textbar{} Tamil (Native) \textbar{} Telugu (Fluent) \textbar{} Hindi (Intermediate)
 
 \end{document}
