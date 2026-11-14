@@ -4,35 +4,33 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="noindex" />
-        <title>404 — Page Not Found | Sarvesh Ganesan</title>
-        <link rel="stylesheet" href="/style.css" />
+        <meta name="color-scheme" content="dark" />
+        <meta name="theme-color" content="#163a6b" />
+        <title>Sheet not found, Sarvesh Ganesan</title>
+        <link rel="icon" href="/sarvesh-portfolio/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="/sarvesh-portfolio/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap"
+        />
     </head>
     <body>
-        <main
-            style="
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 2rem;
-                text-align: center;
-                gap: 1.5rem;
-            "
-        >
-            <h1
-                style="
-                    font-family: 'JetBrains Mono', monospace;
-                    font-size: clamp(3rem, 12vw, 7rem);
-                    margin: 0;
-                "
-            >
-                404
-            </h1>
-            <p style="font-size: 1.2rem; max-width: 500px">
-                This page wandered off into the lakehouse. Let's get you back.
-            </p>
-            <a href="/" class="btn btn-primary" style="text-decoration: none">Back to Home</a>
+        <main class="missing">
+            <section class="sheet" aria-labelledby="missing-title">
+                <div class="grid-ref" aria-hidden="true">
+                    <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span
+                    ><span>F</span>
+                </div>
+                <div class="sheet-head">
+                    <h1 id="missing-title">This sheet isn’t in the set</h1>
+                    <p class="sheet-no">Sheet <b>404</b></p>
+                </div>
+                <p class="lede">
+                    The address may be mistyped, or the page moved. The full set of six sheets
+                    starts on the platform overview.
+                </p>
+                <a class="btn primary" href="/sarvesh-portfolio/">Open the drawing set</a>
+            </section>
         </main>
     </body>
 </html>

@@ -7,15 +7,8 @@ export default [
             globals: {
                 window: 'readonly',
                 document: 'readonly',
-                localStorage: 'readonly',
-                fetch: 'readonly',
-                FormData: 'readonly',
-                AbortController: 'readonly',
                 IntersectionObserver: 'readonly',
-                requestAnimationFrame: 'readonly',
-                setTimeout: 'readonly',
-                clearTimeout: 'readonly',
-                console: 'readonly'
+                setTimeout: 'readonly'
             }
         },
         rules: {

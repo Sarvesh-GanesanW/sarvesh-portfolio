@@ -39,7 +39,9 @@ PROJECTS = {
     "gz": r"\resumeProject{gz:",
 }
 
-# Keep these in step with the data-order attributes in index.html.
+# index.html follows these lists through data-order attributes: each detail drawing on
+# sheet 2 takes the rank of its first bullet here, and the tea and gz sheets take the rank
+# of their first project. Update those attributes when an order here changes.
 VARIANTS = {
     "AI": (
         ["owned", "analyst", "builder", "rag", "cost", "ontology", "lineage",
