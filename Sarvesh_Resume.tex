@@ -44,7 +44,7 @@ GitHub: \href{https://github.com/Sarvesh-GanesanW}{github.com/Sarvesh-GanesanW}
 Lead AI Architect with 3+ years of experience building and shipping a cloud-native enterprise data and AI platform from the ground up. Architect of 20+ production services and runtimes spanning agentic AI, a semantic layer, column-level lineage, an Iceberg lakehouse, and MLOps on AWS EKS, plus the React frontend. Proven record of turning ambiguous product requirements into scalable, governed, cost-optimized systems for enterprise workloads.
 
 \section*{Technical Skills}
-\textbf{Languages \& Frameworks:} Python, JavaScript, React, Node.js, FastAPI, Flask, REST APIs, gRPC, SSE streaming\\
+\textbf{Languages \& Frameworks:} Python, Rust, JavaScript, React, Node.js, FastAPI, Flask, REST APIs, gRPC, SSE streaming\\
 \textbf{AI / LLM:} AWS Bedrock (Claude, GPT, Grok, Kimi), Strands Agents, LangChain, LangGraph, RAG, Model Context Protocol (MCP), Presidio, ONNX\\
 \textbf{Data Engineering:} Apache Spark 4, Apache Iceberg (REST catalog), DuckDB, Arrow, Pandas, Polars, OpenLineage, OData v4\\
 \textbf{Databases:} PostgreSQL, pgvector, Redis, Pinecone, MongoDB, Elasticsearch, DynamoDB\\
@@ -62,7 +62,7 @@ Lead AI Architect with 3+ years of experience building and shipping a cloud-nati
   \item Cut LLM costs with model routing, prompt caching, and a per-call cost ledger with budget reservation and settlement; moving background AI jobs to a lighter model cut log-analysis cost about 11x in live evaluations.
   \item Delivered sub-10-second queries on 100M+ row datasets on a TB-scale Iceberg lakehouse, later upgraded to Spark 4 and Iceberg 1.11 with a REST catalog, scoped credential vending to external engines, per-statement authorization, policy masking, audit logging, and async queries with resumable Arrow-paged results.
   \item Reduced RAG query latency by 90\% using hybrid vector and full-text retrieval with neural reranking, plus OCR of scanned PDFs, enabling real-time document question answering at production scale.
-  \item Built headroom-scaler, a Kubernetes node autoscaler written from scratch in Python that provisions capacity ahead of scheduled demand, with bin-packing, lease-based leader election, AWS and KWOK providers, a Helm chart, and 90 tests; ran MLOps with MLflow, Jupyter on EKS, and GPU runtimes at 99.9\% uptime across multi-tenant deployments.
+  \item Built headroom-scaler, a Kubernetes node autoscaler written from scratch in Python that provisions capacity ahead of scheduled demand, with bin-packing, lease-based leader election, AWS and KWOK providers, a Helm chart, and 130+ tests; ran MLOps with MLflow, Jupyter on EKS, and GPU runtimes at 99.9\% uptime across multi-tenant deployments.
   \item Hardened multi-tenant runtimes with pooled session pods, policy-aware Redis result caching, sandboxed user code, and secret redaction, backed by 1,200+ automated tests in the chat service alone.
 \end{itemize}
 

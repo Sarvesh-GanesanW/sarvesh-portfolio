@@ -302,6 +302,102 @@ function initializeExperienceYears() {
     el.textContent = `${Math.max(0, years)}+ years`;
 }
 
+const RESUME_BY_LENS = {
+    all: 'Sarvesh_Resume.pdf',
+    ai: 'Sarvesh_Resume_AI.pdf',
+    data: 'Sarvesh_Resume_Data.pdf',
+    infra: 'Sarvesh_Resume_Infra.pdf'
+};
+const LENS_HIGHLIGHT_COUNT = 5;
+
+// data-order="ai:2 data:1 infra:3" -> rank for the chosen lens; items without it stay first
+function lensRank(element, lens) {
+    if (lens === 'all') return Number(element.dataset.origIndex);
+    const order = element.dataset.order;
+    if (!order) return -1;
+    const match = order.split(' ').find((part) => part.startsWith(`${lens}:`));
+    return match ? Number(match.split(':')[1]) : Number(element.dataset.origIndex);
+}
+
+function initializeLens() {
+    const buttons = document.querySelectorAll('.lens-option');
+    if (!buttons.length) return;
+
+    const lists = [
+        ...document.querySelectorAll('.lens-list'),
+        document.querySelector('.projects-grid')
+    ].filter(Boolean);
+    lists.forEach((list) =>
+        Array.from(list.children).forEach((item, index) => {
+            item.dataset.origIndex = String(index);
+        })
+    );
+    const resumeLinks = document.querySelectorAll('a[href^="Sarvesh_Resume"]');
+
+    function applyLens(lens) {
+        buttons.forEach((button) =>
+            button.setAttribute('aria-pressed', String(button.dataset.lens === lens))
+        );
+        lists.forEach((list) => {
+            Array.from(list.children)
+                .sort((a, b) => lensRank(a, lens) - lensRank(b, lens))
+                .forEach((item) => list.appendChild(item));
+        });
+        document.querySelectorAll('.lens-list li').forEach((item) => {
+            item.classList.toggle(
+                'lens-dim',
+                lens !== 'all' && lensRank(item, lens) > LENS_HIGHLIGHT_COUNT
+            );
+        });
+        resumeLinks.forEach((link) => {
+            const file = RESUME_BY_LENS[lens];
+            link.setAttribute('href', file);
+            link.setAttribute('download', file.replace('Sarvesh_', 'Sarvesh_Ganesan_'));
+        });
+    }
+
+    function setUrl(lens) {
+        const url = new window.URL(window.location.href);
+        if (lens === 'all') url.searchParams.delete('for');
+        else url.searchParams.set('for', lens);
+        window.history.replaceState(null, '', url);
+    }
+
+    buttons.forEach((button) =>
+        button.addEventListener('click', () => {
+            applyLens(button.dataset.lens);
+            setUrl(button.dataset.lens);
+        })
+    );
+
+    const requested = new window.URLSearchParams(window.location.search).get('for');
+    if (requested && requested in RESUME_BY_LENS) applyLens(requested);
+}
+
+function initializeFlow() {
+    const steps = Array.from(document.querySelectorAll('.flow-step'));
+    if (!steps.length) return;
+    const nodes = Array.from(document.querySelectorAll('.flow-nodes li'));
+
+    function setActive(step) {
+        steps.forEach((item) => item.classList.toggle('active', item === step));
+        nodes.forEach((node) =>
+            node.classList.toggle('active', node.dataset.node === step.dataset.step)
+        );
+    }
+
+    setActive(steps[0]);
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) setActive(entry.target);
+            });
+        },
+        { rootMargin: '-45% 0px -45% 0px' }
+    );
+    steps.forEach((step) => observer.observe(step));
+}
+
 function bootstrap() {
     initializeDarkMode();
     initializeMobileNav();
@@ -313,6 +409,8 @@ function bootstrap() {
     initializeContactForm();
     initializeExperienceYears();
     initializeFooterYear();
+    initializeLens();
+    initializeFlow();
 }
 
 if (document.readyState === 'loading') {

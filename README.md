@@ -12,7 +12,9 @@ Static site: hand-written HTML + CSS + vanilla JavaScript. No build step.
 - `style.css` — single stylesheet, CSS custom properties drive light/dark themes
 - `script.js` — theme toggle, mobile navigation, animations, contact form, and date-based experience
   counter
-- `Sarvesh_Resume.pdf` — downloadable resume
+- `Sarvesh_Resume.tex` — resume source; `Sarvesh_Resume.pdf` is built from it
+- `Sarvesh_Resume_AI.pdf`, `_Data.pdf`, `_Infra.pdf` — the same resume with the most relevant
+  bullets and projects first, served by the "Hiring for" switch
 - `og-image.png`, `favicon.svg` — social preview and browser identity
 - `sitemap.xml`, `robots.txt`, `404.html` — SEO and UX infrastructure
 
@@ -24,6 +26,22 @@ npm run serve        # http://localhost:8080
 npm run lint         # html + css + js
 npm run format       # prettier
 ```
+
+## Resume
+
+```bash
+brew install tectonic
+python3 scripts/build_resume.py   # rebuilds all four PDFs; fails if any runs past one page
+```
+
+The bullet and project order for each version lives in `scripts/build_resume.py` and matches the
+`data-order` attributes in `index.html`.
+
+## Hiring-for links
+
+`?for=ai`, `?for=data` or `?for=infra` opens the page already filtered for that kind of role, with
+the matching resume behind the download button, e.g.
+`https://sarvesh-ganesanw.github.io/sarvesh-portfolio/?for=ai`.
 
 ## Deploy
 
