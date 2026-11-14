@@ -1292,3 +1292,16 @@ section {
         transform: none;
     }
 }
+
+/* Featured project spans the full row; the rest sit beneath it */
+.project-card.featured-project {
+    grid-column: 1 / -1;
+}
+
+.project-card code {
+    padding: 0 0.3em;
+    background: var(--surface-inset);
+    border: 1px solid var(--border-color);
+    font-size: 0.9em;
+    white-space: nowrap;
+}

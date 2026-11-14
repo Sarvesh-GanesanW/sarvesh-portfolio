@@ -247,10 +247,10 @@
                                 queries over 100M+ row datasets via Spark / Iceberg / DuckDB.
                             </p>
                             <p>
-                                Independently shipped a full-stack CRM platform for an enterprise
-                                tea distribution business — storefront, admin dashboard, invoicing,
-                                logistics KPIs, and a Claude-powered MCP server exposing 46
-                                administrative tools across 9 business domains.
+                                Independently built the software a tea distribution business runs on
+                                — storefront, B2B portal, back office with GST invoicing and
+                                ledgers, a WhatsApp ordering agent, and an MCP server that gives
+                                Claude 76 tools to run the admin side.
                             </p>
                         </div>
                         <div class="about-highlights">
@@ -478,142 +478,138 @@
                     <div class="projects-grid">
                         <article class="project-card featured-project">
                             <div class="project-icon">
-                                <i class="fab fa-paypal" aria-hidden="true"></i>
+                                <i class="fas fa-store" aria-hidden="true"></i>
                             </div>
-                            <h3>PayPal Agent</h3>
+                            <h3>Commerce &amp; ERP for a Tea Distributor</h3>
                             <p>
-                                LangGraph-based PayPal tool router and execution service covering
-                                116 API operations. It combines multi-provider model routing, hybrid
-                                RAG, persistent local memory, OAuth token caching, and guarded
-                                mutation flows.
+                                The software a working tea distribution business runs on, built
+                                alone: a retail storefront, a B2B portal where wholesale buyers
+                                order in bulk from CSV and see their ledger, and a 37-screen back
+                                office. One FastAPI backend with 41 admin modules covers orders, GST
+                                invoicing and e-invoice IRNs, ledgers, AR aging, bank
+                                reconciliation, credit limits scored from payment history, loyalty
+                                and referrals, flash sales, procurement, batches, delivery staff,
+                                returns and support tickets.
                             </p>
                             <p class="project-proof">
-                                <strong>Proof:</strong> runnable API and terminal UI, recorded demo
-                                artifacts, strict Pydantic routing, sandbox execution, and automated
-                                safety controls.
+                                <strong>Proof:</strong> 400+ commits across seven repositories.
+                                Deploys to AWS from CloudFormation (Lambda, ECS, RDS, Redis, VPC) or
+                                to a single self-hosted server behind Caddy and Cloudflare, with
+                                Postgres backups to S3 and scheduled abandoned-cart and birthday
+                                campaigns.
+                            </p>
+                            <ul class="project-tech">
+                                <li>FastAPI</li>
+                                <li>PostgreSQL</li>
+                                <li>Redis</li>
+                                <li>Celery</li>
+                                <li>React</li>
+                                <li>CloudFormation</li>
+                            </ul>
+                            <a href="#contact" class="project-link">
+                                <i class="fas fa-lock" aria-hidden="true"></i> Private · on request
+                            </a>
+                        </article>
+                        <article class="project-card">
+                            <div class="project-icon">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            </div>
+                            <h3>AI Agents That Run the Business</h3>
+                            <p>
+                                Customers order over WhatsApp: a LangGraph agent on Bedrock
+                                recognizes them by phone number, shows the catalog, checks their
+                                credit balance, tracks and repeats orders, places new ones and sends
+                                UPI payment links. Staff run the back office from Claude through an
+                                MCP server with 76 tools, from stock and invoices to churn, AR aging
+                                and cart nudges.
+                            </p>
+                            <p class="project-proof">
+                                <strong>Proof:</strong> per-customer memory and rate limits on the
+                                WhatsApp agent, automatic JWT session recovery in the MCP server,
+                                and stock-out and demand forecasts in the admin panel.
                             </p>
                             <ul class="project-tech">
                                 <li>LangGraph</li>
-                                <li>PayPal API</li>
-                                <li>pgvector</li>
-                                <li>FastAPI</li>
                                 <li>Bedrock</li>
+                                <li>WhatsApp Cloud API</li>
+                                <li>MCP</li>
+                                <li>Node.js</li>
                             </ul>
                             <a
-                                href="https://github.com/Sarvesh-GanesanW/paypal-agent"
+                                href="https://github.com/Sarvesh-GanesanW/sre-tea-mcp"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="project-link"
-                                aria-label="View PayPal Agent on GitHub"
+                                aria-label="View the MCP server source on GitHub"
                             >
-                                <i class="fab fa-github" aria-hidden="true"></i> View case study
+                                <i class="fab fa-github" aria-hidden="true"></i> MCP server source
                             </a>
                         </article>
                         <article class="project-card">
                             <div class="project-icon">
-                                <i class="fas fa-plug" aria-hidden="true"></i>
+                                <i class="fas fa-terminal" aria-hidden="true"></i>
                             </div>
-                            <h3>SRE Tea MCP Server</h3>
+                            <h3>gz — Data Platform CLI in Rust</h3>
                             <p>
-                                Production MCP server connected to a live commerce platform. Its 46
-                                tools let Claude operate orders, products, customers, inventory,
-                                invoicing, logistics, retention analytics, and warehouse workflows.
+                                One Rust binary, with a terminal UI, for a whole data platform:
+                                lakehouse SQL, files, ETL jobs, notebooks, models and agents. Hard
+                                questions become one command: <code>gz bisect</code> finds the
+                                commit that broke a table, <code>gz explain</code> traces a
+                                dashboard figure back to its sources, <code>gz jobs try</code> runs
+                                a changed job on branches of the real tables, and
+                                <code>gz fix</code> hands a failed run to an AI assistant that edits
+                                only with permission.
                             </p>
                             <p class="project-proof">
-                                <strong>Proof:</strong> deployed storefront, nine business domains,
-                                automatic token refresh, parallel aggregation, and structured error
-                                recovery.
+                                <strong>Proof:</strong> about 130k lines of Rust and 1,500+ tests;
+                                200+ commits in seven weeks; released to v0.9.1 with
+                                checksum-verified installers and self-update on macOS, Linux and
+                                Windows.
                             </p>
                             <ul class="project-tech">
-                                <li>MCP</li>
-                                <li>Node.js</li>
-                                <li>Claude</li>
-                                <li>STDIO Transport</li>
-                                <li>JWT</li>
+                                <li>Rust</li>
+                                <li>Tokio</li>
+                                <li>Ratatui</li>
+                                <li>Iceberg</li>
                             </ul>
-                            <div class="project-links">
-                                <a
-                                    href="https://github.com/Sarvesh-GanesanW/sre-tea-mcp"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="project-link"
-                                    aria-label="View SRE Tea MCP on GitHub"
-                                    ><i class="fab fa-github" aria-hidden="true"></i> Source</a
-                                >
-                                <a
-                                    href="https://srerajalakshmi.in"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="project-link"
-                                    aria-label="Visit Sree Rajalakshmi Enterprises"
-                                    ><i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                                    Live</a
-                                >
-                            </div>
+                            <a
+                                href="https://github.com/Sarvesh-GanesanW/gz-cli"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link"
+                                aria-label="View gz on GitHub"
+                            >
+                                <i class="fab fa-github" aria-hidden="true"></i> Source &amp;
+                                releases
+                            </a>
                         </article>
                         <article class="project-card">
                             <div class="project-icon">
-                                <i class="fas fa-database" aria-hidden="true"></i>
+                                <i class="fas fa-server" aria-hidden="true"></i>
                             </div>
-                            <h3>Groundzero Lakehouse SDK</h3>
+                            <h3>headroom-scaler</h3>
                             <p>
-                                Typed Python SDK for querying a remote Iceberg lakehouse through a
-                                DB-API interface. It streams Arrow batches, downloads result chunks
-                                concurrently, and converts results to Arrow, Pandas, Python rows, or
-                                Spark.
+                                A Kubernetes node autoscaler that adds nodes before pods exist.
+                                Usual autoscalers wait for pods to go Pending, so every burst waits
+                                minutes for a node. This one keeps bin-packed spare room per
+                                priority class, sized by usage and arrival rate, and provisions
+                                ahead of demand that workloads declare, such as "8 pods of 4 CPU
+                                from 02:00".
                             </p>
                             <p class="project-proof">
-                                <strong>Proof:</strong> bounded-memory streaming, session reuse,
-                                retry controls, parallel partition queries, and configurable HTTP
-                                connection pools.
+                                <strong>Proof:</strong> built at Groundzero. Pure
+                                first-fit-decreasing planner, lease-based leader election, AWS and
+                                KWOK providers, a Helm chart and 130+ tests. It never evicts or
+                                binds pods; it only resizes node groups and removes empty nodes.
                             </p>
                             <ul class="project-tech">
                                 <li>Python</li>
-                                <li>Iceberg</li>
-                                <li>PyArrow</li>
-                                <li>PySpark</li>
-                                <li>S3</li>
+                                <li>Kubernetes</li>
+                                <li>Helm</li>
+                                <li>AWS</li>
                             </ul>
-                            <a
-                                href="https://github.com/Sarvesh-GanesanW/gz-lakehouse-sdk"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-link"
-                                aria-label="View Groundzero Lakehouse SDK on GitHub"
-                            >
-                                <i class="fab fa-github" aria-hidden="true"></i> View case study
-                            </a>
-                        </article>
-                        <article class="project-card">
-                            <div class="project-icon">
-                                <i class="fas fa-shield-halved" aria-hidden="true"></i>
-                            </div>
-                            <h3>QualiPilot</h3>
-                            <p>
-                                Production data-quality CLI and library for structural and
-                                statistical checks across CSV, Parquet, JSON, Pandas, Polars, Dask,
-                                and cuDF datasets.
-                            </p>
-                            <p class="project-proof">
-                                <strong>Proof:</strong> deterministic reports, CI severity gates,
-                                Docker and Lambda deployment, plus probabilistic record linkage
-                                benchmarked at 1M rows in about 10 seconds.
-                            </p>
-                            <ul class="project-tech">
-                                <li>Polars</li>
-                                <li>Dask</li>
-                                <li>cuDF</li>
-                                <li>AWS Bedrock</li>
-                                <li>Pydantic</li>
-                            </ul>
-                            <a
-                                href="https://github.com/Sarvesh-GanesanW/dataqualitychecker"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-link"
-                                aria-label="View QualiPilot on GitHub"
-                            >
-                                <i class="fab fa-github" aria-hidden="true"></i> View case study
+                            <a href="#contact" class="project-link">
+                                <i class="fas fa-lock" aria-hidden="true"></i> Private · on request
                             </a>
                         </article>
                     </div>
